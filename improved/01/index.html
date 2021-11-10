@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h2 id="html_and_accessibility">
+      <a href="#html_and_accessibility" title="Permalink to HTML とアクセシビリティ">HTML とアクセシビリティ</a>
+    </h2>
+    <div>
+      <p>
+        HTML について学習を進めるのにつれて——資料をたくさん読んだり、たくさんの例を見たりするのにつれて——共通の主題を繰り返し見続けることになるでしょう。つまり、意味的な (セマンティックな) HTML を使うことの重要性という主題です (これは、POSH すなわち Plain Old Semantic HTML (簡潔な昔ながらの意味的 HTML) と呼ばれることがあります)。これが意味することは、できる限り、ふさわしい HTML 要素をふさわしい目的に使う、ということです。
+      </p>
+      <p>これが何故それほど重要なのか、不思議に思うかもしれません。何しろ、CSS と JavaScript の組み合わせを使って、ほぼすべての HTML 要素を、どのような仕方であれ望みどおりに振る舞わせることができるわけですから。たとえば、サイト上で動画を再生するためのコントロール・ボタンを、次のようにマークアップすることもできます。</p>
+      <div class="code-example">
+        <pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>動画を再生する<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+      </div>
+      <p>けれども、後にさらに詳しく見るとおり、この役割にふさわしい要素を使うことには、とても意味があります。</p>
+      <div class="code-example">
+        <pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>動画を再生する<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code></pre>
+      </div>
+      <p>
+        HTML の <code>&lt;button&gt;</code> は、ある種の適切なスタイルが (おそらくそのスタイルを上書きしたいと思うでしょうが) デフォルトで適用されているだけでなく、組み込みのキーボード・アクセシビリティも備えています。つまり、<code>&lt;button&gt;</code> 同士の間をタブで移動できますし、リターン / エンターを使って <code>&lt;button&gt;</code> をアクティブにできます。
+      </p>
+      <p>
+        もしプロジェクトの最初から首尾一貫して意味的な HTML を書くならば、意味的な HTML を書く方が非意味的な (駄目な) マークアップを書くよりも長くなったりはしません。それに、意味的な HTML には、アクセシビリティ以外の他の利点もあります。
+      </p>
+      <ol>
+       <li><strong>より開発しやすい</strong>——上述のとおり、ある種の機能がただで手に入りますし、それに、より理解しやすいという点はまず間違いないところです。</li>
+       <li><strong>モバイル機器に関して、より優れている</strong>——意味的な HTML は非意味的なスパゲッティ・コードよりも、ファイルサイズの点でほぼ間違いなく軽量ですし、レスポンシブにするのも簡単です。</li>
+       <li><strong>SEO に関しても良好である</strong>——検索エンジンは、非意味的な <code>&lt;div&gt;</code> などに含まれるキーワードよりも、見出しやリンクなどの中のキーワードの方に重みを持たせているので、ドキュメントが顧客に見つけてもらいやすくなるでしょう。</li>
+      </ol>
+      <p>それでは、ここからアクセシブルな HTML をより詳しく見てゆきましょう。</p>
+      <div class="note notecard">
+        <p><strong>注</strong>: 自分のローカルコンピューターにスクリーンリーダーを用意することは良い考えです。そうすれば、以下に示す例について、ある程度のテストができます。より詳しくは、<a href="/ja/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#screenreaders" data-flaw="link1">Screenreaders guide</a> を参照してください。</p>
+      </div>
+    </div>
+    <div>
+      <p><a href="./test.html">小テストを実施する</a></p>
+    </div>
+  </body>
+</html>
