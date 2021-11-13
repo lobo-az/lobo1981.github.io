@@ -7,8 +7,11 @@
   <p>ウェブ上のどこかで、実は、人々は HTML のマークアップに関してとても変なことをしています。HTML の悪用のうちには、まだ完全に忘れ去られたわけではない過去の遺物的な慣行によるものもあり、ただ単純な無知によるものもあります。いずれにせよ、そうした駄目なコードは、どこで見たものであれ、可能な場合にはいつでも置き換えるべきです。</p>
   <p>ときには、駄目なマークアップを取り去れる状況にいるとは限りません。自分で完全に制御しきれるわけではない、ある種のサーバーサイド・フレームワークによって、生成されたページなのかもしれません。あるいは、自分のページ上に、自分が管理していない (広告バナーのような) 第三者のコンテンツを含むかもしれません。</p>
   <p>しかし、目標は「全か無か」というものではありません。自分ができる改善のことごとくが、アクセシビリティの理念に役立つことでしょう。</p></div><h3 id="text_content"><a href="#text_content" title="Permalink to テキストコンテンツ">テキストコンテンツ</a></h3><div><p>スクリーンリーダーのユーザーが得られる最良のアクセシビリティ支援の一つは、見出しや段落やリストなどの適切なコンテンツ構造です。きちんと意味を備えた例は、以下のようなものになるでしょう。</p>
+
   <div class="code-example">
-    <pre class="brush: html example-good line-numbers language-html notranslate" data-flaw="bad_pre_tags1"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>見出し<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <pre class="brush: html example-good line-numbers language-html notranslate" data-flaw="bad_pre_tags1">
+    <code>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>見出し<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>これは文書のうちの最初のセクションです。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>ここにも、もう一つ段落を足すつもり。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
@@ -23,7 +26,8 @@
 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>2 番目の下位見出し<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>これはコンテンツのうちで 2 番目のサブセクションです。この前のものより面白いと思いますよ。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>これはコンテンツのうちで 2 番目のサブセクションです。この前のものより面白いと思いますよ。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    </code></pre>
   </div>
   <p>スクリーンリーダーを使って試せるように、より長いテキストのバージョンを用意してあります (<a href="https://mdn.github.io/learning-area/accessibility/html/good-semantics.html" data-flaw="link2" class="external" rel=" noopener">good-semantics.html</a> を参照)。これの全体をナビゲートして (経巡って) みれば、これはとても見通しが得やすいものだということがわかるでしょう。</p>
 

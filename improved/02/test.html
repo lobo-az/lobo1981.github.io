@@ -1,8 +1,53 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="../css/test.css" rel="stylesheet">
     <script src="../js/test.js" defer></script>
   </head>
   <body>
+    <table>
+      <thead>
+        <tr>
+          <th>問題内容</th>
+          <th>選択肢</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border">
+          <td>
+            見出しを示すことを表すため、h1タグの代わりに<br>&lt;font size="7"&gt;を利用することがなぜ問題なのか、選択肢から選んでください。
+          </td>
+          <td>
+            <div>
+              <input type="radio" id="tag_title_1" name="tag_title" value="1">
+              <label for="tag_title_1">h1タグの方がfontタグより文字が大きく表示されるため</label>
+            </div>
+          </td>
+        </tr>
+        <tr class="border">
+          <td>
+            スクリーンリーダーは何を行うためのものでしょうか?選択肢から選んでください。
+          </td>
+          <td>
+            <div>
+              <input type="radio" id="screen_reader_1" name="screen_reader" value="1">
+              <label for="screen_reader_1">画面上の画像を推測してくれるOSに備えられた機能</label>
+            </div>
+            <div>
+              <input type="radio" id="screen_reader_2" name="screen_reader" value="2">
+              <label for="screen_reader_2">操作者が画面を確認できない状態にある時、代わりに要素やボタンについて読み上げをしてくれる機能</label>
+            </div>
+          </td>
+        </tr>
+        <tr class="border">
+          <td>
+            明確な言葉を使うことを意識する場合、選択肢の中からどの表現が明確な言葉の表現といえるか。選択肢から選んでください。
+          </td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="submit">小テストの結果を送信する</button>
   </body>
 </html>
