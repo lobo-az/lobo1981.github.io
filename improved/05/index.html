@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <h2 id="accessible_data_tables"><a href="#accessible_data_tables" title="permalink to アクセシブルなデータテーブル">アクセシブルなデータテーブル</a></h2><div><p>基本的なデータテーブルは、たとえば以下のように、とても簡素なマークアップで書けます。</p>
+  <div class="code-example"><pre class="brush: html notranslate"><code>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>age<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>gender<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>gabriel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>13<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>male<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>elva<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>female<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>freida<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>female<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span></code></pre>
+  </div>
+
+  <p>しかしこれには問題があります。スクリーンリーダーのユーザーには、行または列をデータの集まりとしてまとめて関連づける手段が何もないのです。こうした関連づけを行うには、見出し行がどれなのか、見出し行は複数の行を統率しているのか、複数の列を統率しているのか、などといったことを知らねばなりません。こうしたことは、上記のテーブルでは、視覚的に行われる以外にありません (<a href="https://mdn.github.io/learning-area/accessibility/html/bad-table.html" data-flaw="link14" class="external" rel=" noopener">bad-table.html</a> を参照して、その例をご自分で試してみてください)。</p>
+
+  <p>では、 <a href="https://github.com/mdn/learning-area/blob/master/css/styling-boxes/styling-tables/punk-bands-complete.html" class="external" rel=" noopener">パンクバンドのテーブルの例</a> を見てみましょう。ここでは、多少のアクセシビリティ支援が機能していることが分かりますね。</p>
+
+  <ul>
+   <li>テーブルの見出しは、 <a href="/ja/docs/Web/HTML/Element/th"><code>&lt;th&gt;</code></a> 要素を用いて定義されています。さらに、<code>scope</code> 属性を使って、その見出しが行に対する見出しなのか列に対する見出しなのかを指定することもできます。こうすると、スクリーンリーダーが一つの単位として処理できる、データの完全なグループが示されることになります。</li>
+   <li><a href="/ja/docs/Web/HTML/Element/caption"><code>&lt;caption&gt;</code></a> 要素と、<code>&lt;table&gt;</code> の <code>summary</code> 属性は、どちらも似たような役割を果たします。テーブルに対する alt テキストとして機能し、スクリーンリーダーのユーザーに対して、テーブルの中身についての有用で手短な要約を示すのです。<code>&lt;caption&gt;</code> が一般に好ましいのですが、それは、晴眼者のユーザーに対しても <code>&lt;caption&gt;</code> の中身がアクセシブルだからであり、晴眼者のユーザーもその中身を有用だと思うでしょう。実際には、(必ずしも) 二つとも必要というわけではありません。</li>
+  </ul>
+
+  <div class="note notecard">
+  <p><strong>注</strong>: アクセシブルなデータテーブルにまつわる更なる詳細は、<a href="/ja/docs/Learn/HTML/Tables/Advanced">HTML テーブルの発展的な機能とアクセシビリティ</a> という記事を参照してください。</p>
+  </div></div><h2 id="text_alternatives"><a href="#text_alternatives" title="Permalink to 代替テキスト">代替テキスト</a></h2><div><p>テキストによるコンテンツは本質的にアクセシブルですが、マルチメディア・コンテンツについては必ずしも同じことが言えるわけではありません。画像 / 動画コンテンツは視覚障碍者には見えず、音声コンテンツは聴覚障碍者には聞こえません。動画と音声のコンテンツについては、<a href="/ja/docs/Learn/Accessibility/Multimedia">アクセシブルなマルチメディア</a> という記事で後に詳しく扱うことにしますが、本記事では、ごく普通の <a href="/ja/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a> 要素についてのアクセシビリティを見てゆきましょう。</p>
+
+  <p><a href="https://mdn.github.io/learning-area/accessibility/html/accessible-image.html" data-flaw="link15" class="external" rel=" noopener">accessible-image.html</a> という簡単な例を書き上げました。これは、4 枚の同じ画像を含んでいます。</p>
+
+  <pre class="notranslate">
+  &lt;img src="dinosaur.png"&gt;
+  &lt;img src="dinosaur.png"
+       alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."&gt;
+  &lt;!--
+  [alt 属性の訳: 赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります。]
+  --&gt;
+
+  &lt;img src="dinosaur.png"
+       alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."
+       title="The Mozilla red dinosaur"&gt;
+  &lt;!--
+  [alt 属性の訳: 赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります。]
+  [title 属性の訳: Mozilla の赤い恐竜]
+  --&gt;
+
+  &lt;img src="dinosaur.png" aria-labelledby="dino-label"&gt;
+
+  &lt;p id="dino-label"&gt;The Mozilla red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.&lt;/p&gt;
+  &lt;!--
+  [p 要素の中身の訳: Mozilla の赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります。]
+  --&gt;</pre>
+
+  <p>1 枚目の画像は、スクリーンリーダーで見たときに、実際のところ大した手助けをユーザーに与えてはくれません。たとえば VoiceOver は、「/dinosaur.png, image」と読み上げます。なんらかの手助けを提供しようとしてファイル名を読み上げるわけです。この例では、ユーザーは、少なくともこれがある種の恐竜なのだと知ることでしょうが、機械で生成されたファイル名とともにファイルが (たとえばディジタルカメラから) アップロードされる場合もよくありますし、そうしたファイル名は画像の中身に対する文脈を何も与えてはくれないでしょう。</p>
+
+  <div class="note notecard">
+  <p><strong>注</strong>:&nbsp; これこそが、画像の内部にテキストコンテンツを決して含めるべきではない理由です。スクリーンリーダーは、まったくそのテキストコンテンツにアクセスできません。それに、他の欠点もあります。すなわち、そのテキストコンテンツを選択することもコピー / ペーストすることもできません。画像の内部にテキストコンテンツを含めるなどということは、とにかくしないでください!</p>
+  </div>
+
+  <p>スクリーンリーダーは、2 枚目の画像に出くわすと、alt 属性を丸々読み上げます。つまり、「赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります」と読み上げます。</p>
+
+  <p>この例は、いわゆる <strong>alt テキスト</strong>が万一使えない場合に備えて意味のあるファイル名を使うことだけでなく、可能な場合にはいつでも alt テキストを <code>alt</code> 属性において確実に提供しておくことの重要性を、際立たせるものです。<code>alt</code> 属性の中身は常に、画像の端的な描写と、画像が視覚的に伝えているものとを提供すべきであることに、注意してください。ここには、個人的な知識や追加的な説明を何も含めるべきではありません。なぜなら、以前にその画像に出くわしたことのない人にとって有益ではないからです。</p>
+
+  <p>考えるべきことの一つは、画像がコンテンツの内部で意味を持っているのか、あるいは、純粋に視覚的装飾のためのものであって意味は持たないのか、ということです。もし画像が装飾用であれば、その画像を CSS 背景画像としてページ内に含めるだけにする方が良いのです。</p>
+
+  <div class="note notecard">
+  <p><strong>注</strong>: 画像の実装とベスト・プラクティスについての更なる多くの情報については、<a href="/ja/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML">Images in HTML</a> と <a href="/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">Responsive images</a> をお読みください。</p>
+  </div>
+
+  <p>文脈のある追加的な情報をどうしても提示したい場合、その情報は、画像の周囲のテキストの中か、あるいは、上記のように <code>title</code> 属性の内部に入れるべきです。この場合、ほとんどのスクリーンリーダーは、<code>alt</code> テキストと、<code>title</code> 属性と、ファイル名とを読み上げるでしょう。さらに、マウスオーバーしたときには、ブラウザが <code>title</code> テキストをツールチップとして表示します。</p>
+
+  <p><img alt="" src="title-attribute.png" style="display: block; margin: 0 auto;" data-flaw="image4" loading="lazy"></p>
+
+  <p>4 番目の方法についてもざっと見ておきましょう。</p>
+
+  <div class="code-example">
+    <pre class="brush: html notranslate">
+    <code>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dinosaur.png<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dino-label<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dino-label<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>The Mozilla red Tyrannosaurus ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+  </div>
+
+  <p>この場合、<code>alt</code> 属性をまったく使っていません。その代わり、画像についての説明を通常のテキスト段落として提示し、その段落に <code>id</code> を与え、そして、その <code>id</code> を参照するための <code>aria-labelledby</code> 属性を用いました。こうすると、スクリーンリーダーに、その段落をその画像についての alt テキスト / ラベルとして使わせることになります。これは、複数の画像に対して同じテキストをラベルとして使いたい場合に、とりわけ有用です (こうしたことは、<code>alt</code> を使ってではできない事柄なのです)。</p>
+
+  <div class="note notecard">
+  <p><strong>注</strong>: <code>aria-labelledby</code> は <a href="https://www.w3.org/TR/wai-aria-1.1/" class="external" rel=" noopener">WAI-ARIA</a> 仕様の一部です。これのおかげで開発者は、必要な箇所においてスクリーンリーダーのアクセシビリティを高めるために、自分のマークアップに追加的な意味 (セマンティクス) を足すことができます。これがどのように機能するのかについての更なる情報を知るには、<a href="/ja/docs/Learn/Accessibility/WAI-ARIA_basics">WAI-ARIA の基本</a> の記事をお読みください。</p>
+  </div></div><h3 id="other_text_alternative_mechanisms"><a href="#other_text_alternative_mechanisms" title="Permalink to その他の代替テキストの仕組み">その他の代替テキストの仕組み</a></h3><div><p>画像には、説明的テキストを提供するのに利用可能な別の仕組みもあります。たとえば、画像についての広範囲にわたる説明を含む別のウェブドキュメントを指すことを意図した、<code>longdesc</code> 属性があります。たとえば以下のようなものです。</p>
+
+  <div class="code-example">
+    <pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dinosaur.png<span class="token punctuation">"</span></span> <span class="token attr-name">longdesc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dino-info.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+  </div>
+
+  <p>これは良い考えのように思えます。というのも、とりわけ、多くの情報が載っている大きな図表のようなインフォグラフィックを、代わりにアクセシブルなデータテーブル (前節を参照) として表現することがおそらくは可能でしょうから。しかし、<code>longdesc</code> は、スクリーンリーダーによっていつもサポートされているわけではありませんし、スクリーンリーダー以外のものを使っているユーザーにとっては、コンテンツがまったくアクセス不能です。まず間違いなく、画像と同じページに長い説明を含めるか、あるいは、通常のリンクを使って長い説明にリンクする方が、ずっと良いのです。</p>
+
+  <p>HTML5 は、<a href="/ja/docs/Web/HTML/Element/figure"><code>&lt;figure&gt;</code></a> と <a href="/ja/docs/Web/HTML/Element/figcaption"><code>&lt;figcaption&gt;</code></a> という二つの新規要素を含みます。これらは、なんらかの種類の図面 (任意のものであってよく、必ずしも画像とは限りません) を、図面キャプション (説明文) と結びつけることになっているものです。</p>
+
+  <div class="code-example">
+    <pre class="brush: html notranslate">
+    <code>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dinosaur.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Mozilla のティラノサウルス<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">&gt;</span></span>赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
+    </code>
+    </pre>
+  </div>
+
+  <p>あいにく、ほとんどのスクリーンリーダーは、まだ、図面キャプションを図面と結びつけてはくれないようです。ですが、この要素構造は CSS でのスタイルづけにとって有益ですし、ソース内で画像の隣にその画像の説明を配置するための手段を与えてもくれます。</p></div>
+  <h3 id="empty_alt_attributes"><a href="#empty_alt_attributes" title="Permalink to 空の代替テキスト">空の代替テキスト</a></h3><div>
+  <div class="code-example">
+    <pre class="brush: html notranslate">
+    <code>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>article-icon.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    ティラノサウルス・レックス: 恐竜の王
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+    </code>
+    </pre>
+  </div>
+
+  <p>画像がページのデザインに含まれるけれども、主目的は視覚的装飾である、といった場合もあるかもしれません。上記のコード例において、画像の <code>alt</code> 属性が空であることにお気づきでしょう。これは、スクリーンリーダーに画像を認識させるものですが、その画像を説明しようとさせるものではありません (説明する代わりに、スクリーンリーダーは、単に「画像」とか何とか言うでしょう)。</p>
+
+  <p><code>alt</code> を含めないようにする代わりに空の <code>alt</code> を用いる理由は、<code>alt</code> が与えられていない場合には多くのスクリーンリーダーが画像の URL を丸々全部発声するからです。上記の例において画像は、その画像が結びつけられている見出しに対する視覚的装飾として機能しています。このような場合、および、画像が単に装飾にすぎず中身の価値がない場合には、画像に空の <code>alt</code> を入れるべきです。別の選択肢は、<code>role="presentation"</code> という ARIA <code>role</code> 属性を使うことです。こうすることによっても、スクリーンリーダーに代替テキスト (<code>alt</code> テキスト) を読み上げるのをやめさせることができます。</p>
+
+  <div class="note notecard">
+  <p><strong>注</strong>: もし可能なら、単なる修飾であるような画像を表示するのには CSS を使うべきです。</p>
+  </div></div><h2 id="summary"><a href="#summary" title="Permalink to 要約">要約</a></h2><div><p>&nbsp;今や読者の皆さんは、ほとんどの場合にアクセシブルな HTML を書くことについて、熟知しているはずです。<a href="/ja/docs/Learn/Accessibility/WAI-ARIA_basics">WAI-ARIA の基本</a> の記事も、この知識の抜けを埋めてくれるでしょうが、本記事でもその基本には気を配ってきました。次は、CSS と JavaScript を検討しましょう。そして、CSS と JavaScript の良い使い方やまずい使い方によって、アクセシビリティがどのような影響を受けるのかを検討しましょう。</p>
+  </body>
+</html>
