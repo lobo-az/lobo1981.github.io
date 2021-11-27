@@ -1,15 +1,29 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-  <h2 id="good_semantics"><a href="#good_semantics" title="Permalink to 良いセマンティクス">良いセマンティクス</a></h2><div><p>良いセマンティクスの重要性について、そして、ふさわしい役割にふさわしい HTML 要素を使うべきである理由については、すでに述べました。このことは無視してはなりません。なぜなら、適切に扱わないとアクセシビリティがひどく損なわれてしまう主な箇所のうちの一つだからです。</p>
-  <p>ウェブ上のどこかで、実は、人々は HTML のマークアップに関してとても変なことをしています。HTML の悪用のうちには、まだ完全に忘れ去られたわけではない過去の遺物的な慣行によるものもあり、ただ単純な無知によるものもあります。いずれにせよ、そうした駄目なコードは、どこで見たものであれ、可能な場合にはいつでも置き換えるべきです。</p>
-  <p>ときには、駄目なマークアップを取り去れる状況にいるとは限りません。自分で完全に制御しきれるわけではない、ある種のサーバーサイド・フレームワークによって、生成されたページなのかもしれません。あるいは、自分のページ上に、自分が管理していない (広告バナーのような) 第三者のコンテンツを含むかもしれません。</p>
-  <p>しかし、目標は「全か無か」というものではありません。自分ができる改善のことごとくが、アクセシビリティの理念に役立つことでしょう。</p></div><h3 id="text_content"><a href="#text_content" title="Permalink to テキストコンテンツ">テキストコンテンツ</a></h3><div><p>スクリーンリーダーのユーザーが得られる最良のアクセシビリティ支援の一つは、見出しや段落やリストなどの適切なコンテンツ構造です。きちんと意味を備えた例は、以下のようなものになるでしょう。</p>
 
-  <div class="code-example">
-    <pre class="brush: html example-good line-numbers language-html notranslate" data-flaw="bad_pre_tags1">
+<head>
+  <meta charset="utf-8">
+  <link href="../css/main.a43ed10c.chunk.css" rel="stylesheet">
+</head>
+
+<body>
+  <h2 id="good_semantics"><a href="#good_semantics" title="Permalink to 良いセマンティクス">良いセマンティクス</a></h2>
+  <div>
+    <p>良いセマンティクスの重要性について、そして、ふさわしい役割にふさわしい HTML
+      要素を使うべきである理由については、すでに述べました。このことは無視してはなりません。なぜなら、適切に扱わないとアクセシビリティがひどく損なわれてしまう主な箇所のうちの一つだからです。</p>
+    <p>ウェブ上のどこかで、実は、人々は HTML のマークアップに関してとても変なことをしています。HTML
+      の悪用のうちには、まだ完全に忘れ去られたわけではない過去の遺物的な慣行によるものもあり、ただ単純な無知によるものもあります。いずれにせよ、そうした駄目なコードは、どこで見たものであれ、可能な場合にはいつでも置き換えるべきです。
+    </p>
+    <p>
+      ときには、駄目なマークアップを取り去れる状況にいるとは限りません。自分で完全に制御しきれるわけではない、ある種のサーバーサイド・フレームワークによって、生成されたページなのかもしれません。あるいは、自分のページ上に、自分が管理していない
+      (広告バナーのような) 第三者のコンテンツを含むかもしれません。</p>
+    <p>しかし、目標は「全か無か」というものではありません。自分ができる改善のことごとくが、アクセシビリティの理念に役立つことでしょう。</p>
+  </div>
+  <h3 id="text_content"><a href="#text_content" title="Permalink to テキストコンテンツ">テキストコンテンツ</a></h3>
+  <div>
+    <p>スクリーンリーダーのユーザーが得られる最良のアクセシビリティ支援の一つは、見出しや段落やリストなどの適切なコンテンツ構造です。きちんと意味を備えた例は、以下のようなものになるでしょう。</p>
+
+    <div class="code-example">
+      <pre class="brush: html example-good line-numbers language-html notranslate" data-flaw="bad_pre_tags1">
     <code>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>見出し<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>これは文書のうちの最初のセクションです。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
@@ -28,20 +42,23 @@
 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>これはコンテンツのうちで 2 番目のサブセクションです。この前のものより面白いと思いますよ。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
     </code></pre>
-  </div>
-  <p>スクリーンリーダーを使って試せるように、より長いテキストのバージョンを用意してあります (<a href="https://mdn.github.io/learning-area/accessibility/html/good-semantics.html" data-flaw="link2" class="external" rel=" noopener">good-semantics.html</a> を参照)。これの全体をナビゲートして (経巡って) みれば、これはとても見通しが得やすいものだということがわかるでしょう。</p>
+    </div>
+    <p>スクリーンリーダーを使って試せるように、より長いテキストのバージョンを用意してあります (<a
+        href="https://mdn.github.io/learning-area/accessibility/html/good-semantics.html" data-flaw="link2"
+        class="external" rel=" noopener">good-semantics.html</a> を参照)。これの全体をナビゲートして (経巡って)
+      みれば、これはとても見通しが得やすいものだということがわかるでしょう。</p>
 
-  <ol>
-   <li>コンテンツの中を進んでゆくのにつれて、スクリーンリーダーは各ヘッダを読み上げて、どれが見出しでどれが段落なのかといったことを知らせてくれます。</li>
-   <li>どのような速度が快適であるにせよ、その速度で進んでいけるように、スクリーンリーダーは各要素の後で停止します。</li>
-   <li>多くのスクリーンリーダーでは、次の見出し / 前の見出しへとジャンプできます。</li>
-   <li>多くのスクリーンリーダーでは、すべての見出しの一覧を取り出せます。それらの見出しを、特定のコンテンツを見つけるための手軽な目次のようにも使えます。</li>
-  </ol>
+    <ol>
+      <li>コンテンツの中を進んでゆくのにつれて、スクリーンリーダーは各ヘッダを読み上げて、どれが見出しでどれが段落なのかといったことを知らせてくれます。</li>
+      <li>どのような速度が快適であるにせよ、その速度で進んでいけるように、スクリーンリーダーは各要素の後で停止します。</li>
+      <li>多くのスクリーンリーダーでは、次の見出し / 前の見出しへとジャンプできます。</li>
+      <li>多くのスクリーンリーダーでは、すべての見出しの一覧を取り出せます。それらの見出しを、特定のコンテンツを見つけるための手軽な目次のようにも使えます。</li>
+    </ol>
 
-  <p>ときには、たとえば以下のように、体裁用の HTML や改行を使って見出しや段落などを書く人もいます。</p>
+    <p>ときには、たとえば以下のように、体裁用の HTML や改行を使って見出しや段落などを書く人もいます。</p>
 
-  <div class="code-example">
-    <pre class="brush: html example-bad line-numbers  language-html notranslate" data-flaw="bad_pre_tags2"><code><span class="token tag"><span class="token tag">
+    <div class="code-example">
+      <pre class="brush: html example-bad line-numbers  language-html notranslate" data-flaw="bad_pre_tags2"><code><span class="token tag"><span class="token tag">
     <span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>7<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>見出し<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
     これは文書のうちの最初のセクションです。
@@ -61,17 +78,28 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>2 番目の下位見出し<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
     これはコンテンツのうちで 2 番目のサブセクションです。この前のものより面白いと思いますよ。</code></pre>
-  </div>
-  <p>より長いバージョンをスクリーンリーダーで試してみれば (<a href="https://mdn.github.io/learning-area/accessibility/html/bad-semantics.html" data-flaw="link3" class="external" rel=" noopener">bad-semantics.html</a> を参照)、とても良い体験が得られる、とはいかないことでしょう。スクリーンリーダーは、標識として使えるものを何も得られないので、有用な目次は取得できません。また、ページ全体を単一の巨大な塊として見ることになるので、ページ全体が一度にひとかたまりで読み上げられるだけなのです。&nbsp;</p>
-  <p>アクセシビリティ以外の他の問題もあります。たとえば、CSS を使ってコンテンツにスタイルをつけることや、あるいは、JavaScript でコンテンツを操作することが、より難しくなるのです。なぜなら、セレクターとして使える要素がないからです。</p>
+    </div>
+    <p>より長いバージョンをスクリーンリーダーで試してみれば (<a href="https://mdn.github.io/learning-area/accessibility/html/bad-semantics.html"
+        data-flaw="link3" class="external" rel=" noopener">bad-semantics.html</a>
+      を参照)、とても良い体験が得られる、とはいかないことでしょう。スクリーンリーダーは、標識として使えるものを何も得られないので、有用な目次は取得できません。また、ページ全体を単一の巨大な塊として見ることになるので、ページ全体が一度にひとかたまりで読み上げられるだけなのです。&nbsp;
+    </p>
+    <p>アクセシビリティ以外の他の問題もあります。たとえば、CSS を使ってコンテンツにスタイルをつけることや、あるいは、JavaScript
+      でコンテンツを操作することが、より難しくなるのです。なぜなら、セレクターとして使える要素がないからです。</p>
 
-  <h4 id="using_clear_language" name="Using_clear_language">明確な言葉を使う</h4>
-    <p>使っている言い回しもアクセシビリティに影響を与えることがあります。一般に、過度に複雑ではない、明確な言葉を使うべきです。また、不必要な専門用語 (ジャーゴン) や俗語を使わないようにしましょう。これは、認知的な障害またはその他の障害を抱える人たちの助けとなるだけではありません。母語以外で書かれたテキストの読者や、年少者の助けにもなりますし、実際のところあらゆる人の助けになります!&nbsp; それに加えて、スクリーンリーダーによって明確に読み上げられない言い回しや文字を使うことを避けるように努めるべきです。たとえば、以下のようなことです。</p>
+    <h4 id="using_clear_language" name="Using_clear_language">明確な言葉を使う</h4>
+    <p>使っている言い回しもアクセシビリティに影響を与えることがあります。一般に、過度に複雑ではない、明確な言葉を使うべきです。また、不必要な専門用語 (ジャーゴン)
+      や俗語を使わないようにしましょう。これは、認知的な障害またはその他の障害を抱える人たちの助けとなるだけではありません。母語以外で書かれたテキストの読者や、年少者の助けにもなりますし、実際のところあらゆる人の助けになります!&nbsp;
+      それに加えて、スクリーンリーダーによって明確に読み上げられない言い回しや文字を使うことを避けるように努めるべきです。たとえば、以下のようなことです。</p>
 
     <ul>
-     <li>やめられるものなら、ダッシュを使わないようにしましょう。「5–7」と書く代わりに「5 から 7」と書きましょう。</li>
-     <li>略語を展開しましょう。「Jan」と書く代わりに「January」と書きましょう。</li>
-     <li>少なくとも一、二回は、頭文字語を展開しましょう。最初の出現箇所で「HTML」と書く代わりに、「Hypertext Markup Language すなわち HTML」と書きましょう。</li>
+      <li>やめられるものなら、ダッシュを使わないようにしましょう。「5–7」と書く代わりに「5 から 7」と書きましょう。</li>
+      <li>略語を展開しましょう。「Jan」と書く代わりに「January」と書きましょう。</li>
+      <li>少なくとも一、二回は、頭文字語を展開しましょう。最初の出現箇所で「HTML」と書く代わりに、「Hypertext Markup Language すなわち HTML」と書きましょう。</li>
     </ul>
-  </body>
+
+    <div>
+      <p><a href="./test.html">小テストを実施する</a></p>
+    </div>
+</body>
+
 </html>

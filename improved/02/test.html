@@ -1,53 +1,89 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link href="../css/test.css" rel="stylesheet">
-    <script src="../js/test.js" defer></script>
-  </head>
-  <body>
-    <table>
-      <thead>
-        <tr>
-          <th>問題内容</th>
-          <th>選択肢</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border">
-          <td>
-            見出しを示すことを表すため、h1タグの代わりに<br>&lt;font size="7"&gt;を利用することがなぜ問題なのか、選択肢から選んでください。
-          </td>
-          <td>
-            <div>
-              <input type="radio" id="tag_title_1" name="tag_title" value="1">
-              <label for="tag_title_1">h1タグの方がfontタグより文字が大きく表示されるため</label>
-            </div>
-          </td>
-        </tr>
-        <tr class="border">
-          <td>
-            スクリーンリーダーは何を行うためのものでしょうか?選択肢から選んでください。
-          </td>
-          <td>
-            <div>
-              <input type="radio" id="screen_reader_1" name="screen_reader" value="1">
-              <label for="screen_reader_1">画面上の画像を推測してくれるOSに備えられた機能</label>
-            </div>
-            <div>
-              <input type="radio" id="screen_reader_2" name="screen_reader" value="2">
-              <label for="screen_reader_2">操作者が画面を確認できない状態にある時、代わりに要素やボタンについて読み上げをしてくれる機能</label>
-            </div>
-          </td>
-        </tr>
-        <tr class="border">
-          <td>
-            明確な言葉を使うことを意識する場合、選択肢の中からどの表現が明確な言葉の表現といえるか。選択肢から選んでください。
-          </td>
-          <td>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button id="submit">小テストの結果を送信する</button>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <link href="../css/test.css" rel="stylesheet">
+  <link href="../css/main.a43ed10c.chunk.css" rel="stylesheet">
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>問題内容</th>
+        <th>選択肢</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border">
+        <td>
+          見出しを示すことを表すため、h1タグの代わりに<br>&lt;font size="7"&gt;を利用することがなぜ問題なのか、選択肢から選んでください。
+        </td>
+        <td>
+          <div>
+            <input type="radio" id="test_1_1" name="q1" value="1">
+            <label for="test_1_1">h1タグの方がfontタグより文字が大きく表示されるため</label>
+          </div>
+        </td>
+      </tr>
+      <tr class="border">
+        <td>
+          スクリーンリーダーは何を行うためのものでしょうか?選択肢から選んでください。
+        </td>
+        <td>
+          <div>
+            <input type="radio" id="test_2_1" name="q2" value="1">
+            <label for="test_2_1">画面上の画像を推測してくれるOSに備えられた機能</label>
+          </div>
+          <div>
+            <input type="radio" id="test_2_2" name="q2" value="2">
+            <label for="test_2_2">操作者が画面を確認できない状態にある時、代わりに要素やボタンについて読み上げをしてくれる機能</label>
+          </div>
+        </td>
+      </tr>
+      <tr class="border">
+        <td>
+          明確な言葉を使うことを意識する場合、選択肢の中からどの表現が明確な言葉の表現といえるか。選択肢から選んでください。
+        </td>
+        <td>
+          <div>
+            <input type="radio" id="test_3_1" name="q3" value="1">
+            <label for="test_3_1">1月のことを英語でJanuaryと書く</label>
+          </div>
+          <div>
+            <input type="radio" id="test_3_2" name="q3" value="2">
+            <label for="test_3_2">HTMLのことはHTMLと表記する</label>
+          </div>
+        </td>
+      </tr>
+      <tr class="border">
+        <td>
+          セクションを適切に利用することでスクリーンリーダを使う点でどのような利点が考えられるか、選択肢から選んでください。
+        </td>
+        <td>
+          <div>
+            <input type="radio" id="test_4_1" name="q4" value="1">
+            <label for="test_4_1">セクションをスクリーンリーダが読み上げる際、綺麗な発音となる。</label>
+          </div>
+        </td>
+      </tr>
+      <tr class="border">
+        <td>
+          体裁を整えるために&lt;br/&gt;タグを利用することにどのような問題が生じるか、選択肢から選択してください。
+        </td>
+        <td>
+          <div>
+            <input type="radio" id="test_5_1" name="q5" value="1">
+            <label for="test_5_1">改行を気軽に書けなくなる。</label>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="hidden" id="sheetName" value="Q2">
+  <button id="submit">小テストの結果を送信する</button>
+  <script async defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script async defer src="../js/test.js"></script>
+</body>
+
 </html>

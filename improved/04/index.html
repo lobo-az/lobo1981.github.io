@@ -1,20 +1,41 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-  <h3 id="ui_controls"><a href="#ui_controls" title="Permalink to UI コントロール">UI コントロール</a></h3><div><p>ここで&nbsp;UI コントロールという言葉によって意味しているのは、ユーザーが対話的に操作する対象の、ウェブドキュメントの主要部分のことであり、もっとも一般的には、ボタン、リンク、およびフォーム・コントロールのことです。本節では、そうしたコントロールを作る際に認識しておくべき基本的なアクセシビリティの問題を見てゆきましょう。WAI-ARIA とマルチメディアに関する後続の記事で、UI アクセシビリティの他の側面について見ることにします。</p>
-  <p>UI コントロールのアクセシビリティに対する一つの重要な側面は、ブラウザがデフォルトでは 、UI コントロールをキーボードで操作できるようにしている、ということです。このことは、<a href="https://mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html" data-flaw="link7" class="external" rel=" noopener">native-keyboard-accessibility.html</a>&nbsp;の例 (<a href="https://github.com/mdn/learning-area/blob/master/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html" class="external" rel=" noopener">ソースコード</a>&nbsp;を参照) を用いて試せます。これを新規タブで開いて、タブキーを押してみてください。二、三回押してみた後には、フォーカス可能な異なる要素の間をタブ・フォーカスが動き回り始めたのだと分かるはずです。どの要素にフォーカスが当たっているのかが分かるように、どのブラウザでも、フォーカスの当たっている要素には、ハイライトされたデフォルトのスタイルが付与されます (そのスタイルは、異なるブラウザ間では少し差があります)。</p>
-  <p><img alt="" src="button-focused-unfocused.png" style="border-style: solid; border-width: 1px; display: block; margin: 0px auto;" data-flaw="image_widths1" loading="lazy"></p>
-  <p>その後、エンターキー / リターンキーを押すと、フォーカスの当たっているリンクをたどることもできますし、または、ボタンを押すこともできますし (ボタンにメッセージ警告を出させるための JavaScript を含めておきました)、あるいは、テキスト入力欄にテキストを入力するためのタイピングを開始することもできます (他のフォーム要素には別のコントロールがあります。たとえば、<a href="/ja/docs/Web/HTML/Element/select"><code>&lt;select&gt;</code></a> 要素は、選択肢を表示させることや、上下の矢印キーを用いて選択肢の間を行ったり来たりさせることができます)。</p>
-  <div class="note notecard">
-  <p><strong>注</strong>: 異なるブラウザでは、異なるキーボード・コントロール・オプションを使用可能としている場合があります。さらに詳しいことは、<a href="/ja/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#using_native_keyboard_accessibility" data-flaw="link8">Using native keyboard accessibility</a>&nbsp;を参照してください。</p>
-  </div>
 
-  <p>こうした振る舞いは、たとえば以下のように単に適切な要素を用いるだけで、本質的にはただで手に入ります。</p>
+<head>
+  <meta charset="utf-8">
+  <link href="../css/main.a43ed10c.chunk.css" rel="stylesheet">
+</head>
 
-  <div class="code-example">
-    <pre class="brush: html example-good notranslate"><code>
+<body>
+  <h3 id="ui_controls"><a href="#ui_controls" title="Permalink to UI コントロール">UI コントロール</a></h3>
+  <div>
+    <p>ここで&nbsp;UI
+      コントロールという言葉によって意味しているのは、ユーザーが対話的に操作する対象の、ウェブドキュメントの主要部分のことであり、もっとも一般的には、ボタン、リンク、およびフォーム・コントロールのことです。本節では、そうしたコントロールを作る際に認識しておくべき基本的なアクセシビリティの問題を見てゆきましょう。WAI-ARIA
+      とマルチメディアに関する後続の記事で、UI アクセシビリティの他の側面について見ることにします。</p>
+    <p>UI コントロールのアクセシビリティに対する一つの重要な側面は、ブラウザがデフォルトでは 、UI コントロールをキーボードで操作できるようにしている、ということです。このことは、<a
+        href="https://mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html"
+        data-flaw="link7" class="external" rel=" noopener">native-keyboard-accessibility.html</a>&nbsp;の例 (<a
+        href="https://github.com/mdn/learning-area/blob/master/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html"
+        class="external" rel=" noopener">ソースコード</a>&nbsp;を参照)
+      を用いて試せます。これを新規タブで開いて、タブキーを押してみてください。二、三回押してみた後には、フォーカス可能な異なる要素の間をタブ・フォーカスが動き回り始めたのだと分かるはずです。どの要素にフォーカスが当たっているのかが分かるように、どのブラウザでも、フォーカスの当たっている要素には、ハイライトされたデフォルトのスタイルが付与されます
+      (そのスタイルは、異なるブラウザ間では少し差があります)。</p>
+    <p><img alt="" src="button-focused-unfocused.png"
+        style="border-style: solid; border-width: 1px; display: block; margin: 0px auto;" data-flaw="image_widths1"
+        loading="lazy"></p>
+    <p>その後、エンターキー / リターンキーを押すと、フォーカスの当たっているリンクをたどることもできますし、または、ボタンを押すこともできますし (ボタンにメッセージ警告を出させるための JavaScript
+      を含めておきました)、あるいは、テキスト入力欄にテキストを入力するためのタイピングを開始することもできます (他のフォーム要素には別のコントロールがあります。たとえば、<a
+        href="/ja/docs/Web/HTML/Element/select"><code>&lt;select&gt;</code></a>
+      要素は、選択肢を表示させることや、上下の矢印キーを用いて選択肢の間を行ったり来たりさせることができます)。</p>
+    <div class="note notecard">
+      <p><strong>注</strong>: 異なるブラウザでは、異なるキーボード・コントロール・オプションを使用可能としている場合があります。さらに詳しいことは、<a
+          href="/ja/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#using_native_keyboard_accessibility"
+          data-flaw="link8">Using native keyboard accessibility</a>&nbsp;を参照してください。</p>
+    </div>
+
+    <p>こうした振る舞いは、たとえば以下のように単に適切な要素を用いるだけで、本質的にはただで手に入ります。</p>
+
+    <div class="code-example">
+      <pre
+        class="brush: html example-good notranslate"><code>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Links<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is a link to <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mozilla<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 
@@ -49,46 +70,65 @@
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
-  </div>
+    </div>
 
-  <p>これは、リンクやボタンやフォーム要素やラベルを適切に用いることを意味しています (フォーム・コントロール用の&nbsp;<a href="/ja/docs/Web/HTML/Element/label"><code>&lt;label&gt;</code></a> 要素を含めています)。</p>
+    <p>これは、リンクやボタンやフォーム要素やラベルを適切に用いることを意味しています (フォーム・コントロール用の&nbsp;<a
+        href="/ja/docs/Web/HTML/Element/label"><code>&lt;label&gt;</code></a> 要素を含めています)。</p>
 
-  <p>しかし、またしてもですが、人が HTML で変なことをする場合がときにはあるものです。たとえば、次のように <a href="/ja/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a> を用いてマークアップしたボタンを見かけることも、ときにはあります。</p>
+    <p>しかし、またしてもですが、人が HTML で変なことをする場合がときにはあるものです。たとえば、次のように <a
+        href="/ja/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a> を用いてマークアップしたボタンを見かけることも、ときにはあります。</p>
 
-  <div class="code-example">
-    <pre class="brush: html example-bad notranslate"><code>
+    <div class="code-example">
+      <pre
+        class="brush: html example-bad notranslate"><code>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the first button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the second button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me too!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the third button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>And me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
-  </div>
+    </div>
 
-  <p>しかし、そうしたコードを使うことは、勧められることではありません。単に <a href="/ja/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a> 要素を使っていたなら得られていたはずの、ネイティブなキーボード・アクセシビリティを直ちに失ってしまううえに、当該ボタンが得るデフォルトの CSS スタイル付けを何も得られないからです。</p>
+    <p>しかし、そうしたコードを使うことは、勧められることではありません。単に <a href="/ja/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a>
+      要素を使っていたなら得られていたはずの、ネイティブなキーボード・アクセシビリティを直ちに失ってしまううえに、当該ボタンが得るデフォルトの CSS スタイル付けを何も得られないからです。</p>
 
-  <h4 id="building_keyboard_accessibility_back_in" name="Building_keyboard_accessibility_back_in">キーボード・アクセシビリティを呼び戻すように盛り込む</h4>
+    <h4 id="building_keyboard_accessibility_back_in" name="Building_keyboard_accessibility_back_in">
+      キーボード・アクセシビリティを呼び戻すように盛り込む</h4>
 
-  <p>そうした利点を呼び戻すように追加するには、ちょっとした作業が必要です (<a class="external external-icon" href="https://mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html" data-flaw="link9" rel=" noopener">fake-div-buttons.html</a> で例示的コードを試せます。<a class="external external-icon" href="https://github.com/mdn/learning-area/blob/master/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html" rel=" noopener">ソースコード</a> も参照してください)。ここでは、各ボタンに <code>tabindex="0"</code> という属性を付与することによって、見せかけの <code>&lt;div&gt;</code> ボタンにフォーカスを当てられるようにしました (タブキーを通じてのフォーカスを含みます)。</p>
+    <p>そうした利点を呼び戻すように追加するには、ちょっとした作業が必要です (<a class="external external-icon"
+        href="https://mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html"
+        data-flaw="link9" rel=" noopener">fake-div-buttons.html</a> で例示的コードを試せます。<a class="external external-icon"
+        href="https://github.com/mdn/learning-area/blob/master/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html"
+        rel=" noopener">ソースコード</a> も参照してください)。ここでは、各ボタンに <code>tabindex="0"</code> という属性を付与することによって、見せかけの
+      <code>&lt;div&gt;</code> ボタンにフォーカスを当てられるようにしました (タブキーを通じてのフォーカスを含みます)。
+    </p>
 
-  <div class="code-example">
-    <pre class="brush: html notranslate">
+    <div class="code-example">
+      <pre class="brush: html notranslate">
     <code>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the first button<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the second button<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me too!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the third button<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>And me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     </code>
     </pre>
-  </div>
+    </div>
 
-  <p>基本的には、<a href="/ja/docs/Web/HTML/Global_attributes#attr-tabindex"><code>tabindex</code></a> 属性は、タブキーでの移動が可能な要素に、単なるデフォルトのソース順でのタブ移動の代わりとなる特別あつらえのタブ順序 (正数の順で指定されるもの) を持たせられるようにすることを、主に意図したものです。これはほとんどの場合、筋の悪い考え方です。なぜなら、重大な混乱を招きかねないからです。本当に必要な場合にのみ、<a href="/ja/docs/Web/HTML/Global_attributes#attr-tabindex"><code>tabindex</code></a> 属性を使うようにしてください。たとえば、レイアウトによって、物事がソースコードとはまるで違った見かけ上の順序で示されており、かつ、より論理的に物事を機能させたいと望んでいるような場合です。<code>tabindex</code> には、あと二つの選択肢があります。</p>
+    <p>基本的には、<a href="/ja/docs/Web/HTML/Global_attributes#attr-tabindex"><code>tabindex</code></a>
+      属性は、タブキーでの移動が可能な要素に、単なるデフォルトのソース順でのタブ移動の代わりとなる特別あつらえのタブ順序 (正数の順で指定されるもの)
+      を持たせられるようにすることを、主に意図したものです。これはほとんどの場合、筋の悪い考え方です。なぜなら、重大な混乱を招きかねないからです。本当に必要な場合にのみ、<a
+        href="/ja/docs/Web/HTML/Global_attributes#attr-tabindex"><code>tabindex</code></a>
+      属性を使うようにしてください。たとえば、レイアウトによって、物事がソースコードとはまるで違った見かけ上の順序で示されており、かつ、より論理的に物事を機能させたいと望んでいるような場合です。<code>tabindex</code>
+      には、あと二つの選択肢があります。</p>
 
-  <ul>
-   <li><code>tabindex="0"</code> — 上記のとおり、この値によって、普通ならタブキーでの移動が可能ではない要素が、タブキーでの移動が可能となります。これは、<code>tabindex</code> の一番有益な値です。</li>
-   <li><code>tabindex="-1"</code> — これによって、普通ならタブキーでの移動が可能ではない要素が、(たとえば JavaScript を介して) プログラム的にフォーカスを得たり、あるいはリンクのターゲットとしてフォーカスを得たりすることが可能となります。</li>
-  </ul>
+    <ul>
+      <li><code>tabindex="0"</code> — 上記のとおり、この値によって、普通ならタブキーでの移動が可能ではない要素が、タブキーでの移動が可能となります。これは、<code>tabindex</code>
+        の一番有益な値です。</li>
+      <li><code>tabindex="-1"</code> — これによって、普通ならタブキーでの移動が可能ではない要素が、(たとえば JavaScript を介して)
+        プログラム的にフォーカスを得たり、あるいはリンクのターゲットとしてフォーカスを得たりすることが可能となります。</li>
+    </ul>
 
-  <p>上記のような追加作業によって、タブキーでボタンに移動できるようにはなりますが、エンターキー / リターンキーを介してボタンをアクティブにすることはできるようになりません。それを可能とするには、以下のようなちょっとした JavaScript のごまかしを追加せねばなりません。</p>
+    <p>上記のような追加作業によって、タブキーでボタンに移動できるようにはなりますが、エンターキー / リターンキーを介してボタンをアクティブにすることはできるようになりません。それを可能とするには、以下のようなちょっとした
+      JavaScript のごまかしを追加せねばなりません。</p>
 
-  <div class="code-example">
-    <pre class="brush: js line-numbers  language-js notranslate" data-flaw="bad_pre_tags3">
+    <div class="code-example">
+      <pre class="brush: js line-numbers  language-js notranslate" data-flaw="bad_pre_tags3">
     <code>
     document<span class="token punctuation">.</span><span class="token function-variable function">onkeydown</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>keyCode <span class="token operator">===</span> <span class="token number">13</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// The Enter/Return key</span>
@@ -97,46 +137,76 @@
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
     </code>
     </pre>
-  </div>
+    </div>
 
-  <p>ここでは、キーボード上でいつボタンが押されたのかを検出するために、<code>document</code> オブジェクトにリスナーを追加しています。どのボタンが押されたのかを、イベント・オブジェクトの <code><a href="/ja/docs/Web/API/KeyboardEvent/keyCode">keyCode</a></code> プロパティを介して調べています。 [訳注: 以上の二つの文の「ボタン」はキーボード上のキーのことのようです。また、<code>keyCode</code> プロパティは非推奨になっています。]もしエンターキー / リターンキーに合致するキーコードだったら、<code>document.activeElement.onclick()</code> を用い、ボタンの <code>onclick</code> ハンドラーに記憶されている関数を実行します [訳注: この文の「ボタン」は <code>&lt;div&gt;</code> ボタンのことのようです]。<code><a href="/ja/docs/Web/API/Document/activeElement">activeElement</a></code> は、ページ上で現在フォーカスの当たっている要素を教えてくれます。</p>
+    <p>ここでは、キーボード上でいつボタンが押されたのかを検出するために、<code>document</code> オブジェクトにリスナーを追加しています。どのボタンが押されたのかを、イベント・オブジェクトの
+      <code><a href="/ja/docs/Web/API/KeyboardEvent/keyCode">keyCode</a></code> プロパティを介して調べています。 [訳注:
+      以上の二つの文の「ボタン」はキーボード上のキーのことのようです。また、<code>keyCode</code> プロパティは非推奨になっています。]もしエンターキー /
+      リターンキーに合致するキーコードだったら、<code>document.activeElement.onclick()</code> を用い、ボタンの <code>onclick</code>
+      ハンドラーに記憶されている関数を実行します [訳注: この文の「ボタン」は <code>&lt;div&gt;</code>
+      ボタンのことのようです]。<code><a href="/ja/docs/Web/API/Document/activeElement">activeElement</a></code>
+      は、ページ上で現在フォーカスの当たっている要素を教えてくれます。
+    </p>
 
-  <div class="note notecard">
-  <p><strong>注</strong>: 自分の独自のイベントハンドラーを、イベントハンドラー・プロパティ (たとえば <code>onclick</code>) を介して設定した場合にのみ、この技法がうまくいくだろうということに留意すべきです。<code>addEventListener</code> だと、うまくいきません。</p>
-  </div>
+    <div class="note notecard">
+      <p><strong>注</strong>: 自分の独自のイベントハンドラーを、イベントハンドラー・プロパティ (たとえば <code>onclick</code>)
+        を介して設定した場合にのみ、この技法がうまくいくだろうということに留意すべきです。<code>addEventListener</code> だと、うまくいきません。</p>
+    </div>
 
-  <p>これでは、機能を呼び戻すように盛り込むための、余計な厄介ごとの山ですね。それに、これにともなう他の問題もきっとあるはずです。<strong>そもそも、単にふさわしい要素をふさわしい役割に使うべきなのです。</strong></p>
+    <p>これでは、機能を呼び戻すように盛り込むための、余計な厄介ごとの山ですね。それに、これにともなう他の問題もきっとあるはずです。<strong>そもそも、単にふさわしい要素をふさわしい役割に使うべきなのです。</strong>
+    </p>
 
-  <h4 id="meaningful_text_labels" name="Meaningful_text_labels">意味の通るテキストラベル</h4>
+    <h4 id="meaningful_text_labels" name="Meaningful_text_labels">意味の通るテキストラベル</h4>
 
-  <p>UI コントロールのテキストラベルはあらゆるユーザーにとって大変有益ですが、そうしたラベルを適切なものにしておくことは、とりわけ、障碍のあるユーザーにとって重要です。</p>
+    <p>UI コントロールのテキストラベルはあらゆるユーザーにとって大変有益ですが、そうしたラベルを適切なものにしておくことは、とりわけ、障碍のあるユーザーにとって重要です。</p>
 
-  <p>ボタンとリンクテキストのラベルが、理解可能であり、かつ弁別性のあるものになっていることを、確認すべきです。ラベルとして単に「ここをクリック」を使うのはいけません。なぜなら、スクリーンリーダーのユーザーは、ボタンとフォーム・コントロールの一覧をまとめ上げることがあるからです。以下のスクリーンショットは、Mac 上の VoiceOver によって一覧化されたコントロールを示しています。</p>
+    <p>
+      ボタンとリンクテキストのラベルが、理解可能であり、かつ弁別性のあるものになっていることを、確認すべきです。ラベルとして単に「ここをクリック」を使うのはいけません。なぜなら、スクリーンリーダーのユーザーは、ボタンとフォーム・コントロールの一覧をまとめ上げることがあるからです。以下のスクリーンショットは、Mac
+      上の VoiceOver によって一覧化されたコントロールを示しています。</p>
 
-  <p><img alt="" src="voiceover-formcontrols.png" style="display: block; margin: 0px auto;" data-flaw="image_widths2" loading="lazy"></p>
+    <p><img alt="" src="voiceover-formcontrols.png" style="display: block; margin: 0px auto;" data-flaw="image_widths2"
+        loading="lazy"></p>
 
-  <p>ラベルが存在している段落の文脈内においてラベルが意味をなすようにするだけでなく、文脈を離れてもラベルが意味をなすように (ラベルが単独で読まれても意味をなすように) してください。たとえば、以下のものは、良いリンクテキストの例を示しています。</p>
+    <p>ラベルが存在している段落の文脈内においてラベルが意味をなすようにするだけでなく、文脈を離れてもラベルが意味をなすように (ラベルが単独で読まれても意味をなすように)
+      してください。たとえば、以下のものは、良いリンクテキストの例を示しています。</p>
 
-  <div class="code-example"><pre class="brush: html example-good notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>クジラは本当にすごい生き物です。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>whales.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>クジラについてもっと知ってくださいね<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div>
+    <div class="code-example">
+      <pre
+        class="brush: html example-good notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>クジラは本当にすごい生き物です。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>whales.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>クジラについてもっと知ってくださいね<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
 
-  <p>しかしこれは駄目なリンクテキストです。</p>
+    <p>しかしこれは駄目なリンクテキストです。</p>
 
-  <div class="code-example"><pre class="brush: html example-bad notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>クジラは本当にすごい生き物です。クジラについてもっと知るには、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>whales.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ここをクリックしてください<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div>
+    <div class="code-example">
+      <pre
+        class="brush: html example-bad notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>クジラは本当にすごい生き物です。クジラについてもっと知るには、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>whales.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ここをクリックしてください<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
 
-  <div class="note notecard">
-  <p><strong>注</strong>: リンクの実装とベスト・プラクティスに関するさらなる情報を、<a href="/ja/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks">Creating hyperlinks</a> &nbsp;という記事で知ることができます。また、いくつかの良い例と悪い例を、<a href="https://mdn.github.io/learning-area/accessibility/html/good-links.html" data-flaw="link10" class="external" rel=" noopener">good-links.html</a> と <a href="https://mdn.github.io/learning-area/accessibility/html/bad-links.html" data-flaw="link11" class="external" rel=" noopener">bad-links.html</a> で見ることもできます。</p>
-  </div>
+    <div class="note notecard">
+      <p><strong>注</strong>: リンクの実装とベスト・プラクティスに関するさらなる情報を、<a
+          href="/ja/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks">Creating hyperlinks</a>
+        &nbsp;という記事で知ることができます。また、いくつかの良い例と悪い例を、<a
+          href="https://mdn.github.io/learning-area/accessibility/html/good-links.html" data-flaw="link10"
+          class="external" rel=" noopener">good-links.html</a> と <a
+          href="https://mdn.github.io/learning-area/accessibility/html/bad-links.html" data-flaw="link11"
+          class="external" rel=" noopener">bad-links.html</a> で見ることもできます。</p>
+    </div>
 
-  <p>フォーム・ラベルも重要です。なぜなら、各フォーム入力欄に何を入力する必要があるのかについての手がかりを与えてくれるからです。以下のものは、十分に筋の通った例のように見えます。</p>
+    <p>フォーム・ラベルも重要です。なぜなら、各フォーム入力欄に何を入力する必要があるのかについての手がかりを与えてくれるからです。以下のものは、十分に筋の通った例のように見えます。</p>
 
-  <div class="code-example"><pre class="brush: html example-bad notranslate"><code>名前を入れてください: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre></div>
+    <div class="code-example">
+      <pre
+        class="brush: html example-bad notranslate"><code>名前を入れてください: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
 
-  <p>しかしこれは、障碍のあるユーザーにとって、それほど有用ではありません。このラベルを曖昧性なしにフォーム入力欄に結びつけ、そして、仮に入力欄が見えなくても、入力欄をどう埋めたら良いのかを明確にしてくれるものが、上記の例には何もありません。なんらかのスクリーンリーダーでこの例にアクセスした場合には、「テキストを編集する」のような感じの説明のみが与えられることもあるかもしれません。</p>
+    <p>
+      しかしこれは、障碍のあるユーザーにとって、それほど有用ではありません。このラベルを曖昧性なしにフォーム入力欄に結びつけ、そして、仮に入力欄が見えなくても、入力欄をどう埋めたら良いのかを明確にしてくれるものが、上記の例には何もありません。なんらかのスクリーンリーダーでこの例にアクセスした場合には、「テキストを編集する」のような感じの説明のみが与えられることもあるかもしれません。
+    </p>
 
-  <p>以下のものは、ずっと良い例です。</p>
+    <p>以下のものは、ずっと良い例です。</p>
 
-  <div class="code-example">
-    <pre class="brush: html example-good notranslate">
+    <div class="code-example">
+      <pre class="brush: html example-good notranslate">
     <code>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>名前を入れてください:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
@@ -144,16 +214,28 @@
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     </code>
     </pre>
-  </div>
+    </div>
 
-  <p>このようなコードだと、ラベルが明確に入力欄と結びつけられることになります。説明は、(上記のような単なる「テキストを編集する」ではなくて) むしろ「名前を入れてください: テキストを編集する」といった感じのものになるでしょう。</p>
+    <p>このようなコードだと、ラベルが明確に入力欄と結びつけられることになります。説明は、(上記のような単なる「テキストを編集する」ではなくて) むしろ「名前を入れてください: テキストを編集する」といった感じのものになるでしょう。
+    </p>
 
-  <p><img alt="" src="voiceover-good-form-label.png" style="display: block; margin: 0 auto;" data-flaw="image3" loading="lazy"></p>
+    <p><img alt="" src="voiceover-good-form-label.png" style="display: block; margin: 0 auto;" data-flaw="image3"
+        loading="lazy"></p>
 
-  <p>追加のおまけとして、ほとんどのブラウザにおいて、ラベルをフォーム入力欄に結びつけることは、ラベルをクリックして当該フォーム要素を選択 / アクティブ化することが可能なことを意味します。このことにより、入力欄に対して、より大きなヒット領域を与えることになり、したがって、入力欄が選択しやすくなります。</p>
+    <p>追加のおまけとして、ほとんどのブラウザにおいて、ラベルをフォーム入力欄に結びつけることは、ラベルをクリックして当該フォーム要素を選択 /
+      アクティブ化することが可能なことを意味します。このことにより、入力欄に対して、より大きなヒット領域を与えることになり、したがって、入力欄が選択しやすくなります。</p>
 
-  <div class="note notecard">
-  <p><strong>注</strong>: <a href="https://mdn.github.io/learning-area/accessibility/html/good-form.html" data-flaw="link12" class="external" rel=" noopener">good-form.html</a> と <a href="https://mdn.github.io/learning-area/accessibility/html/bad-form.html" data-flaw="link13" class="external" rel=" noopener">bad-form.html</a> で、いくつかの良いフォーム例と悪いフォーム例を見られます。</p>
-  </div>
-  </body>
+    <div class="note notecard">
+      <p><strong>注</strong>: <a href="https://mdn.github.io/learning-area/accessibility/html/good-form.html"
+          data-flaw="link12" class="external" rel=" noopener">good-form.html</a> と <a
+          href="https://mdn.github.io/learning-area/accessibility/html/bad-form.html" data-flaw="link13"
+          class="external" rel=" noopener">bad-form.html</a> で、いくつかの良いフォーム例と悪いフォーム例を見られます。</p>
+    </div>
+
+    <div>
+      <p><a href="./test.html">小テストを実施する</a></p>
+    </div>
+
+</body>
+
 </html>

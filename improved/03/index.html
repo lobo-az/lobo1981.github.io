@@ -1,14 +1,23 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-  <h3 id="page_layouts"><a href="#page_layouts" title="Permalink to ページレイアウト">ページレイアウト</a></h3><div><p>古き悪しき時代には、HTML テーブルを使って (つまり、ヘッダー、フッター、サイドバー、主要コンテンツの列、などなどを含む、別々のテーブル・セルを使って)、ページレイアウトを作成していたものです。これは良い考えではありません。なぜなら、スクリーンリーダーが、こんがらがった読み上げを発する可能性が高いからです。特に、レイアウトが複雑で多くの入れ子になったテーブルがある場合には、そうなりがちです。</p>
 
-  <p><a href="https://mdn.github.io/learning-area/accessibility/html/table-layout.html" data-flaw="link4" class="external" rel=" noopener">table-layout.html</a> の例を試してみてください。これは、以下のような感じになっています。</p>
+<head>
+  <meta charset="utf-8">
+  <link href="../css/main.a43ed10c.chunk.css" rel="stylesheet">
+</head>
 
-  <div class="code-example">
-    <pre class="brush: html notranslate"><code>
+<body>
+  <h3 id="page_layouts"><a href="#page_layouts" title="Permalink to ページレイアウト">ページレイアウト</a></h3>
+  <div>
+    <p>古き悪しき時代には、HTML テーブルを使って
+      (つまり、ヘッダー、フッター、サイドバー、主要コンテンツの列、などなどを含む、別々のテーブル・セルを使って)、ページレイアウトを作成していたものです。これは良い考えではありません。なぜなら、スクリーンリーダーが、こんがらがった読み上げを発する可能性が高いからです。特に、レイアウトが複雑で多くの入れ子になったテーブルがある場合には、そうなりがちです。
+    </p>
+
+    <p><a href="https://mdn.github.io/learning-area/accessibility/html/table-layout.html" data-flaw="link4"
+        class="external" rel=" noopener">table-layout.html</a> の例を試してみてください。これは、以下のような感じになっています。</p>
+
+    <div class="code-example">
+      <pre
+        class="brush: html notranslate"><code>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1200<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
         <span class="token comment">&lt;!-- 主要な見出しの行 --&gt;</span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -75,14 +84,22 @@
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span></code></pre>
     </div>
 
-  <p>&nbsp;スクリーンリーダーを使ってこれを読んで回ろうとすると、おそらくスクリーンリーダーは、見るべきテーブルがありますよ、と教えてくれるでしょう (もっとも、一部のスクリーンリーダーは、テーブル・レイアウトとデータ・テーブルとの違いを推測できるでしょうが)。すると、(使っているスクリーンリーダーによりますが) オブジェクトとしてのテーブルのところまで行って、そのテーブルの項目をそれぞれ別々に見て、それからやっと、テーブルから抜けて元の場所に戻り、コンテンツを読んで回ることを続ける、というふうにせざるを得ない可能性が高いでしょう。</p>
+    <p>&nbsp;スクリーンリーダーを使ってこれを読んで回ろうとすると、おそらくスクリーンリーダーは、見るべきテーブルがありますよ、と教えてくれるでしょう
+      (もっとも、一部のスクリーンリーダーは、テーブル・レイアウトとデータ・テーブルとの違いを推測できるでしょうが)。すると、(使っているスクリーンリーダーによりますが)
+      オブジェクトとしてのテーブルのところまで行って、そのテーブルの項目をそれぞれ別々に見て、それからやっと、テーブルから抜けて元の場所に戻り、コンテンツを読んで回ることを続ける、というふうにせざるを得ない可能性が高いでしょう。
+    </p>
 
-  <p>テーブル・レイアウトは過去の遺物です。テーブル・レイアウトは、CSS のサポートがブラウザに広く行き渡っていなかった当時には意味を持っていましたが、スクリーンリーダーのユーザーに対して混乱を巻き起こします。しかも、他の多くの理由でも有害です (テーブルの乱用ですし、ほぼ間違いなくマークアップをより多く要しますし、デザインの柔軟さを損ねます)。テーブル・レイアウトをしてはなりません!</p>
+    <p>テーブル・レイアウトは過去の遺物です。テーブル・レイアウトは、CSS
+      のサポートがブラウザに広く行き渡っていなかった当時には意味を持っていましたが、スクリーンリーダーのユーザーに対して混乱を巻き起こします。しかも、他の多くの理由でも有害です
+      (テーブルの乱用ですし、ほぼ間違いなくマークアップをより多く要しますし、デザインの柔軟さを損ねます)。テーブル・レイアウトをしてはなりません!</p>
 
-  <p>直前にした体験を、<a href="https://mdn.github.io/learning-area/html/introduction-to-html/document_and_website_structure/" data-flaw="link5" class="external" rel=" noopener">よりモダンなウェブサイトの構成例</a> (以下のような感じです) と比較することで、上記のような (テーブル・レイアウトは駄目だという) 主張の正しさを確認できます。</p>
+    <p>直前にした体験を、<a href="https://mdn.github.io/learning-area/html/introduction-to-html/document_and_website_structure/"
+        data-flaw="link5" class="external" rel=" noopener">よりモダンなウェブサイトの構成例</a> (以下のような感じです) と比較することで、上記のような
+      (テーブル・レイアウトは駄目だという) 主張の正しさを確認できます。</p>
 
-  <div class="code-example">
-    <pre class="brush: html notranslate"><code>
+    <div class="code-example">
+      <pre
+        class="brush: html notranslate"><code>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
@@ -114,14 +131,33 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
       <span class="token comment">&lt;!-- フッターの中身はここです。 --&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
+
+    <p>
+      よりモダンな構造の例をスクリーンリーダーで試してみれば、もはやレイアウト・マークアップが妨げになることもなく、コンテンツの読み上げを混乱させることもない、とわかるでしょう。また、これは、コード・サイズの点で、より無駄がなく、より小さくなっています。これが意味することは、コードの保守が容易になるということ、そして、ユーザがダウンロードするのに帯域幅が小さくて済むということです
+      (特に、接続が遅い人たちにとってはこれが効きます)。</p>
+
+    <p>レイアウトを作る際に考慮すべきもう一つの事柄は、上記の例に見られるように HTML5 の意味的要素を用いることです (<a href="/ja/docs/Web/HTML/Element#content_sectioning"
+        data-flaw="link6">コンテンツセクショニング</a>&nbsp;を参照)。 入れ子になった <a
+        href="/ja/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a> 要素だけを使ってレイアウトを作ることもできますが、適切なセクショニング (区分け)
+      要素を使って、主要なナビゲーション&nbsp;(<a href="/ja/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a>)&nbsp;やフッター (<a
+        href="/ja/docs/Web/HTML/Element/footer"><code>&lt;footer&gt;</code></a>)&nbsp;や繰り返し現れるコンテンツ単位&nbsp;(<a
+        href="/ja/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code></a>)
+      などを囲う方が良いのです。これらの区分け要素は、いまナビゲートしている最中のコンテンツについての追加的な手がかりをユーザーに与えられるように、スクリーンリーダー (および他のツール) に追加的な意味 (セマンティクス)
+      を提供してくれます (スクリーンリーダー・サポートとはどのようなものなのかについての考え方に関しては、<a
+        href="http://www.weba11y.com/blog/2016/04/22/screen-reader-support-for-new-html5-section-elements/"
+        class="external" rel=" noopener">Screen Reader Support for new HTML5 Section Elements</a> を参照)。</p>
+
+    <div class="note notecard">
+      <p><strong>注</strong>: コンテンツは、ちゃんと意味的なものにしておき、レイアウトも魅惑的にしておくだけでなく、ソース順において論理的に意味をなすようにもしておくべきです。あとで CSS
+        を使えば必ず望みどおりの場所にコンテンツを配置できますが、ソース順は、その順で読み始めるのが適切なようにしておくべきです。そうすれば、スクリーンリーダーのユーザーが読み上げさせたものが、意味をなすことでしょう。</p>
+    </div>
   </div>
 
-  <p>よりモダンな構造の例をスクリーンリーダーで試してみれば、もはやレイアウト・マークアップが妨げになることもなく、コンテンツの読み上げを混乱させることもない、とわかるでしょう。また、これは、コード・サイズの点で、より無駄がなく、より小さくなっています。これが意味することは、コードの保守が容易になるということ、そして、ユーザがダウンロードするのに帯域幅が小さくて済むということです (特に、接続が遅い人たちにとってはこれが効きます)。</p>
+  <div>
+    <p><a href="./test.html">小テストを実施する</a></p>
+  </div>
 
-  <p>レイアウトを作る際に考慮すべきもう一つの事柄は、上記の例に見られるように HTML5 の意味的要素を用いることです (<a href="/ja/docs/Web/HTML/Element#content_sectioning" data-flaw="link6">コンテンツセクショニング</a>&nbsp;を参照)。 入れ子になった <a href="/ja/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a> 要素だけを使ってレイアウトを作ることもできますが、適切なセクショニング (区分け) 要素を使って、主要なナビゲーション&nbsp;(<a href="/ja/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a>)&nbsp;やフッター (<a href="/ja/docs/Web/HTML/Element/footer"><code>&lt;footer&gt;</code></a>)&nbsp;や繰り返し現れるコンテンツ単位&nbsp;(<a href="/ja/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code></a>) などを囲う方が良いのです。これらの区分け要素は、いまナビゲートしている最中のコンテンツについての追加的な手がかりをユーザーに与えられるように、スクリーンリーダー (および他のツール) に追加的な意味 (セマンティクス) を提供してくれます (スクリーンリーダー・サポートとはどのようなものなのかについての考え方に関しては、<a href="http://www.weba11y.com/blog/2016/04/22/screen-reader-support-for-new-html5-section-elements/" class="external" rel=" noopener">Screen Reader Support for new HTML5 Section Elements</a> を参照)。</p>
+</body>
 
-  <div class="note notecard">
-  <p><strong>注</strong>: コンテンツは、ちゃんと意味的なものにしておき、レイアウトも魅惑的にしておくだけでなく、ソース順において論理的に意味をなすようにもしておくべきです。あとで CSS を使えば必ず望みどおりの場所にコンテンツを配置できますが、ソース順は、その順で読み始めるのが適切なようにしておくべきです。そうすれば、スクリーンリーダーのユーザーが読み上げさせたものが、意味をなすことでしょう。</p>
-  </div></div>
-  </body>
 </html>

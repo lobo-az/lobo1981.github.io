@@ -1,13 +1,35 @@
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <p class="summary">正確な HTML要素が、常に正しい目的で使用されているかを確認するだけで、たくさんのウェブコンテンツがアクセシブルになります。 ここでは、最大限のアクセシビリティを確保するために、HTML をどのように使用できるかについて詳しく説明します。</p>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div>
+    <p class="summary">正確な HTML要素が、常に正しい目的で使用されているかを確認するだけで、たくさんのウェブコンテンツがアクセシブルになります。 ここでは、最大限のアクセシビリティを確保するために、HTML
+      をどのように使用できるかについて詳しく説明します。</p>
     <p>
-    教材を開始するには以下のリンクをクリックしてください。
-    教材はセクション1から5まであります。
+      教材を開始するには以下のリンクをクリックしてください。
+      教材はセクション1から5まであります。
     </p>
-    <a href="./01/index.html">教材を利用した学習を開始する</a>
-  </body>
+  </div>
+  <div>
+    <label>メールアドレスを入力し、教材による学習を開始してください。:
+      <input type="email" size="30" name="email" id="email" value="">
+    </label>
+  </div>
+  <a href="./01/index.html" id="start">教材を利用した学習を開始する</a>
+  <script>
+    document.getElementById('start').onclick = function checkedEmail(e) {
+      var email = document.getElementById('email');
+      if (email.value.length == 0) {
+        e.preventDefault();
+        alert('emailアドレスを入力してください。');
+        return;
+      }
+      document.cookie = `email=${email.value}`;
+    }
+  </script>
+</body>
+
 </html>
