@@ -1,19 +1,44 @@
-var POST_URL = 'https://spread-sheet-push-app.vercel.app/api/cors';
+const POST_URL = 'https://spread-sheet-push-app.vercel.app/api/cors';
+const GET_EXISTS_MAIL_ADDRESS_URL = 'https://script.google.com/macros/s/AKfycbzzO95N6DSIj_vibFx86ECr0ES2DZShFfJuGAj96qGFJHRrMcy5mLP4VEYL48eDBLkytA/exec';
+
+async function getExistsEmail(email, questionNumber) {
+  let params = new URLSearchParams({ questionNumber: questionNumber, email: email });
+  console.log(`${GET_EXISTS_MAIL_ADDRESS_URL}?${params}`);
+  let response = await fetch(`${GET_EXISTS_MAIL_ADDRESS_URL}?${params}`, { mode: 'no-cors' });
+
+  let text = await response.text();
+  text = text ? utf8Decoder.decode(text) : '';
+
+  console.log(`response is ${text}`);
+
+  const re = /not/gm;
+  let result = re.exec(text);
+
+  return !result;
+}
 
 document.getElementById("submit").onclick = async function sendResult(e) {
-  var sheetName = document.getElementById('sheetName').value;
-  var q1 = _.filter(document.getElementsByName("q1"), function (o) { return o.checked; })[0].value;
-  var q2 = _.filter(document.getElementsByName("q2"), function (o) { return o.checked; })[0].value;
-  var q3 = _.filter(document.getElementsByName("q3"), function (o) { return o.checked; })[0].value;
-  var q4 = _.filter(document.getElementsByName("q4"), function (o) { return o.checked; })[0].value;
-  var q5 = _.filter(document.getElementsByName("q5"), function (o) { return o.checked; })[0].value;
+  let sheetName = document.getElementById('sheetName').value;
+  let q1 = Array.from(document.getElementsByName("q1")).filter(function (o) { return o.checked; })[0].value;
+  let q2 = Array.from(document.getElementsByName("q2")).filter(function (o) { return o.checked; })[0].value;
+  let q3 = Array.from(document.getElementsByName("q3")).filter(function (o) { return o.checked; })[0].value;
+  let q4 = Array.from(document.getElementsByName("q4")).filter(function (o) { return o.checked; })[0].value;
+  let q5 = Array.from(document.getElementsByName("q5")).filter(function (o) { return o.checked; })[0].value;
 
-  var email = document.cookie
+  let email = document.cookie
     .split('; ')
     .find(function (row) { return row.startsWith('email'); })
     .split('=')[1];
 
-  var sendPostData = {
+  let emailExists = await getExistsEmail(email, sheetName);
+
+  if (emailExists) {
+    alert('すでに小テストに回答済みです。');
+    e.preventDefault();
+    return;
+  }
+
+  let sendPostData = {
     'questionNumber': sheetName,
     'email': email,
     'selectValue_0': q1,
@@ -23,12 +48,10 @@ document.getElementById("submit").onclick = async function sendResult(e) {
     'selectValue_4': q5,
   };
 
-  var params = Object.assign(sendPostData);
-
-  console.dir(params);
+  let sendParams = Object.assign(sendPostData);
   await fetch(POST_URL, {
     method: 'POST',
-    body: JSON.stringify(params),
+    body: JSON.stringify(sendParams),
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
