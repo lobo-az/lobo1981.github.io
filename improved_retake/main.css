@@ -1,0 +1,120 @@
+body, html {
+  margin: 0px;
+  padding: 0px;
+}
+
+.is-hidden { display: none; }
+
+.header-menu {
+  z-index: 999;
+  height: 64px;
+  position: absolute;
+  top: 0px;
+  background-color: black;
+  width: 100%;
+  text-align: left;
+  color: white;
+}
+
+.container {
+  position: absolute;
+  top: 64px;
+  margin: 0px 15px;
+}
+
+.menu-block {
+  list-style: none;
+  display: flex;
+}
+
+.menu-content {
+  padding: 0px 10px;
+}
+
+.button {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 2px;
+  margin: 0px 5px;
+  box-sizing: border-box;
+}
+
+.fix-button {
+  font-size: x-large;
+}
+
+.material {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 2px;
+  margin: 0px 5px;
+  box-sizing: border-box;
+}
+
+.material-current {
+  color: black;
+  border-color: red;
+  background-color: white;
+}
+
+.material-other {
+  color: white;
+  border-color: white;
+  background-color: black;
+}
+
+.button::before,
+.button::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+
+.button,
+.button::after,
+.button::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+.overlay-modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(138, 138, 138, 0.6);
+}
+
+.modal-content {
+  z-index: 1000;
+  padding: 20px 30px;
+  width: 600px;
+  position: relative;
+  min-height: 300px;
+  margin: 5% auto 0;
+  background: #fff;
+}
+
+.test-table {
+  border-collapse: collapse;
+  margin: 10px 10px;
+}
+
+.test-table-border {
+  border-style: solid;
+  border-width: 1px 0px 0px 0px;
+  border-color: black;
+  margin: 5px;
+}
