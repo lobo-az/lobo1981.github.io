@@ -538,7 +538,8 @@
             (セマンティクス)
             を提供してくれます (スクリーンリーダー・サポートとはどのようなものなのかについての考え方に関しては、<a
               href="http://www.weba11y.com/blog/2016/04/22/screen-reader-support-for-new-html5-section-elements/"
-              class="external" rel=" noopener">Screen Reader Support for new HTML5 Section Elements</a> を参照)。</p>
+              class="external" rel=" noopener">Screen Reader Support for new HTML5 Section Elements</a> を参照)。
+          </p>
 
           <div class="note notecard">
             <p><strong>注</strong>: コンテンツは、ちゃんと意味的なものにしておき、レイアウトも魅惑的にしておくだけでなく、ソース順において論理的に意味をなすようにもしておくべきです。あとで CSS
@@ -631,7 +632,462 @@
     <!-- 教材 3 -->
     <div id="content-3">
       <div id="q-3" class="is-hidden">
-        <p>かきく</p>
+        <h3 id="ui_controls"><a href="#ui_controls" title="Permalink to UI コントロール">UI コントロール</a></h3>
+        <div>
+          <p>ここで&nbsp;UI
+            コントロールという言葉によって意味しているのは、ユーザーが対話的に操作する対象の、ウェブドキュメントの主要部分のことであり、もっとも一般的には、ボタン、リンク、およびフォーム・コントロールのことです。本節では、そうしたコントロールを作る際に認識しておくべき基本的なアクセシビリティの問題を見てゆきましょう。WAI-ARIA
+            とマルチメディアに関する後続の記事で、UI アクセシビリティの他の側面について見ることにします。</p>
+          <p>UI コントロールのアクセシビリティに対する一つの重要な側面は、ブラウザがデフォルトでは 、UI コントロールをキーボードで操作できるようにしている、ということです。このことは、<a
+              href="https://mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html"
+              data-flaw="link7" class="external" rel=" noopener">native-keyboard-accessibility.html</a>&nbsp;の例 (<a
+              href="https://github.com/mdn/learning-area/blob/master/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html"
+              class="external" rel=" noopener">ソースコード</a>&nbsp;を参照)
+            を用いて試せます。これを新規タブで開いて、タブキーを押してみてください。二、三回押してみた後には、フォーカス可能な異なる要素の間をタブ・フォーカスが動き回り始めたのだと分かるはずです。どの要素にフォーカスが当たっているのかが分かるように、どのブラウザでも、フォーカスの当たっている要素には、ハイライトされたデフォルトのスタイルが付与されます
+            (そのスタイルは、異なるブラウザ間では少し差があります)。</p>
+          <p><img alt="" src="button-focused-unfocused.png"
+              style="border-style: solid; border-width: 1px; display: block; margin: 0px auto;"
+              data-flaw="image_widths1" loading="lazy"></p>
+          <p>その後、エンターキー / リターンキーを押すと、フォーカスの当たっているリンクをたどることもできますし、または、ボタンを押すこともできますし (ボタンにメッセージ警告を出させるための JavaScript
+            を含めておきました)、あるいは、テキスト入力欄にテキストを入力するためのタイピングを開始することもできます (他のフォーム要素には別のコントロールがあります。たとえば、<a
+              href="/ja/docs/Web/HTML/Element/select"><code>&lt;select&gt;</code></a>
+            要素は、選択肢を表示させることや、上下の矢印キーを用いて選択肢の間を行ったり来たりさせることができます)。</p>
+          <div class="note notecard">
+            <p><strong>注</strong>: 異なるブラウザでは、異なるキーボード・コントロール・オプションを使用可能としている場合があります。さらに詳しいことは、<a
+                href="/ja/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#using_native_keyboard_accessibility"
+                data-flaw="link8">Using native keyboard accessibility</a>&nbsp;を参照してください。</p>
+          </div>
+
+          <p>こうした振る舞いは、たとえば以下のように単に適切な要素を用いるだけで、本質的にはただで手に入ります。</p>
+
+          <div class="code-example">
+            <pre
+              class="brush: html example-good notranslate"><code>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Links<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is a link to <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mozilla<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Another link, to the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://developer.mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mozilla Developer Network<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Buttons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the first button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the second button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me too!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the third button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>And me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Form<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Fill in your name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your age:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mood<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Choose your mood:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mood<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mood<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Happy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Sad<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Angry<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Worried<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+
+          <p>これは、リンクやボタンやフォーム要素やラベルを適切に用いることを意味しています (フォーム・コントロール用の&nbsp;<a
+              href="/ja/docs/Web/HTML/Element/label"><code>&lt;label&gt;</code></a> 要素を含めています)。</p>
+
+          <p>しかし、またしてもですが、人が HTML で変なことをする場合がときにはあるものです。たとえば、次のように <a
+              href="/ja/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a> を用いてマークアップしたボタンを見かけることも、ときにはあります。</p>
+
+          <div class="code-example">
+            <pre
+              class="brush: html example-bad notranslate"><code>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the first button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the second button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me too!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the third button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>And me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+
+          <p>しかし、そうしたコードを使うことは、勧められることではありません。単に <a
+              href="/ja/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a>
+            要素を使っていたなら得られていたはずの、ネイティブなキーボード・アクセシビリティを直ちに失ってしまううえに、当該ボタンが得るデフォルトの CSS スタイル付けを何も得られないからです。</p>
+
+          <h4 id="building_keyboard_accessibility_back_in" name="Building_keyboard_accessibility_back_in">
+            キーボード・アクセシビリティを呼び戻すように盛り込む</h4>
+
+          <p>そうした利点を呼び戻すように追加するには、ちょっとした作業が必要です (<a class="external external-icon"
+              href="https://mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html"
+              data-flaw="link9" rel=" noopener">fake-div-buttons.html</a> で例示的コードを試せます。<a class="external external-icon"
+              href="https://github.com/mdn/learning-area/blob/master/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html"
+              rel=" noopener">ソースコード</a> も参照してください)。ここでは、各ボタンに <code>tabindex="0"</code> という属性を付与することによって、見せかけの
+            <code>&lt;div&gt;</code> ボタンにフォーカスを当てられるようにしました (タブキーを通じてのフォーカスを含みます)。
+          </p>
+
+          <div class="code-example">
+            <pre class="brush: html notranslate">
+          <code>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the first button<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the second button<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me too!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the third button<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>And me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          </code>
+          </pre>
+          </div>
+
+          <p>基本的には、<a href="/ja/docs/Web/HTML/Global_attributes#attr-tabindex"><code>tabindex</code></a>
+            属性は、タブキーでの移動が可能な要素に、単なるデフォルトのソース順でのタブ移動の代わりとなる特別あつらえのタブ順序 (正数の順で指定されるもの)
+            を持たせられるようにすることを、主に意図したものです。これはほとんどの場合、筋の悪い考え方です。なぜなら、重大な混乱を招きかねないからです。本当に必要な場合にのみ、<a
+              href="/ja/docs/Web/HTML/Global_attributes#attr-tabindex"><code>tabindex</code></a>
+            属性を使うようにしてください。たとえば、レイアウトによって、物事がソースコードとはまるで違った見かけ上の順序で示されており、かつ、より論理的に物事を機能させたいと望んでいるような場合です。<code>tabindex</code>
+            には、あと二つの選択肢があります。</p>
+
+          <ul>
+            <li><code>tabindex="0"</code> —
+              上記のとおり、この値によって、普通ならタブキーでの移動が可能ではない要素が、タブキーでの移動が可能となります。これは、<code>tabindex</code>
+              の一番有益な値です。</li>
+            <li><code>tabindex="-1"</code> — これによって、普通ならタブキーでの移動が可能ではない要素が、(たとえば JavaScript を介して)
+              プログラム的にフォーカスを得たり、あるいはリンクのターゲットとしてフォーカスを得たりすることが可能となります。</li>
+          </ul>
+
+          <p>上記のような追加作業によって、タブキーでボタンに移動できるようにはなりますが、エンターキー /
+            リターンキーを介してボタンをアクティブにすることはできるようになりません。それを可能とするには、以下のようなちょっとした
+            JavaScript のごまかしを追加せねばなりません。</p>
+
+          <div class="code-example">
+            <pre class="brush: js line-numbers  language-js notranslate" data-flaw="bad_pre_tags3">
+          <code>
+          document<span class="token punctuation">.</span><span class="token function-variable function">onkeydown</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>keyCode <span class="token operator">===</span> <span class="token number">13</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// The Enter/Return key</span>
+              document<span class="token punctuation">.</span>activeElement<span class="token punctuation">.</span><span class="token function">onclick</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">;</span>
+          </code>
+          </pre>
+          </div>
+
+          <p>ここでは、キーボード上でいつボタンが押されたのかを検出するために、<code>document</code> オブジェクトにリスナーを追加しています。どのボタンが押されたのかを、イベント・オブジェクトの
+            <code><a href="/ja/docs/Web/API/KeyboardEvent/keyCode">keyCode</a></code> プロパティを介して調べています。 [訳注:
+            以上の二つの文の「ボタン」はキーボード上のキーのことのようです。また、<code>keyCode</code> プロパティは非推奨になっています。]もしエンターキー /
+            リターンキーに合致するキーコードだったら、<code>document.activeElement.onclick()</code> を用い、ボタンの <code>onclick</code>
+            ハンドラーに記憶されている関数を実行します [訳注: この文の「ボタン」は <code>&lt;div&gt;</code>
+            ボタンのことのようです]。<code><a href="/ja/docs/Web/API/Document/activeElement">activeElement</a></code>
+            は、ページ上で現在フォーカスの当たっている要素を教えてくれます。
+          </p>
+
+          <div class="note notecard">
+            <p><strong>注</strong>: 自分の独自のイベントハンドラーを、イベントハンドラー・プロパティ (たとえば <code>onclick</code>)
+              を介して設定した場合にのみ、この技法がうまくいくだろうということに留意すべきです。<code>addEventListener</code> だと、うまくいきません。</p>
+          </div>
+
+          <p>
+            これでは、機能を呼び戻すように盛り込むための、余計な厄介ごとの山ですね。それに、これにともなう他の問題もきっとあるはずです。<strong>そもそも、単にふさわしい要素をふさわしい役割に使うべきなのです。</strong>
+          </p>
+
+          <h4 id="meaningful_text_labels" name="Meaningful_text_labels">意味の通るテキストラベル</h4>
+
+          <p>UI コントロールのテキストラベルはあらゆるユーザーにとって大変有益ですが、そうしたラベルを適切なものにしておくことは、とりわけ、障碍のあるユーザーにとって重要です。</p>
+
+          <p>
+            ボタンとリンクテキストのラベルが、理解可能であり、かつ弁別性のあるものになっていることを、確認すべきです。ラベルとして単に「ここをクリック」を使うのはいけません。なぜなら、スクリーンリーダーのユーザーは、ボタンとフォーム・コントロールの一覧をまとめ上げることがあるからです。以下のスクリーンショットは、Mac
+            上の VoiceOver によって一覧化されたコントロールを示しています。</p>
+
+          <p><img alt="" src="voiceover-formcontrols.png" style="display: block; margin: 0px auto;"
+              data-flaw="image_widths2" loading="lazy"></p>
+
+          <p>ラベルが存在している段落の文脈内においてラベルが意味をなすようにするだけでなく、文脈を離れてもラベルが意味をなすように (ラベルが単独で読まれても意味をなすように)
+            してください。たとえば、以下のものは、良いリンクテキストの例を示しています。</p>
+
+          <div class="code-example">
+            <pre
+              class="brush: html example-good notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>クジラは本当にすごい生き物です。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>whales.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>クジラについてもっと知ってくださいね<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+
+          <p>しかしこれは駄目なリンクテキストです。</p>
+
+          <div class="code-example">
+            <pre
+              class="brush: html example-bad notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>クジラは本当にすごい生き物です。クジラについてもっと知るには、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>whales.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ここをクリックしてください<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+
+          <div class="note notecard">
+            <p><strong>注</strong>: リンクの実装とベスト・プラクティスに関するさらなる情報を、<a
+                href="/ja/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks">Creating hyperlinks</a>
+              &nbsp;という記事で知ることができます。また、いくつかの良い例と悪い例を、<a
+                href="https://mdn.github.io/learning-area/accessibility/html/good-links.html" data-flaw="link10"
+                class="external" rel=" noopener">good-links.html</a> と <a
+                href="https://mdn.github.io/learning-area/accessibility/html/bad-links.html" data-flaw="link11"
+                class="external" rel=" noopener">bad-links.html</a> で見ることもできます。</p>
+          </div>
+
+          <p>フォーム・ラベルも重要です。なぜなら、各フォーム入力欄に何を入力する必要があるのかについての手がかりを与えてくれるからです。以下のものは、十分に筋の通った例のように見えます。</p>
+
+          <div class="code-example">
+            <pre
+              class="brush: html example-bad notranslate"><code>名前を入れてください: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+
+          <p>
+            しかしこれは、障碍のあるユーザーにとって、それほど有用ではありません。このラベルを曖昧性なしにフォーム入力欄に結びつけ、そして、仮に入力欄が見えなくても、入力欄をどう埋めたら良いのかを明確にしてくれるものが、上記の例には何もありません。なんらかのスクリーンリーダーでこの例にアクセスした場合には、「テキストを編集する」のような感じの説明のみが与えられることもあるかもしれません。
+          </p>
+
+          <p>以下のものは、ずっと良い例です。</p>
+
+          <div class="code-example">
+            <pre class="brush: html example-good notranslate">
+          <code>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>名前を入れてください:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          </code>
+          </pre>
+          </div>
+
+          <p>このようなコードだと、ラベルが明確に入力欄と結びつけられることになります。説明は、(上記のような単なる「テキストを編集する」ではなくて) むしろ「名前を入れてください:
+            テキストを編集する」といった感じのものになるでしょう。
+          </p>
+
+          <p><img alt="" src="voiceover-good-form-label.png" style="display: block; margin: 0 auto;" data-flaw="image3"
+              loading="lazy"></p>
+
+          <p>追加のおまけとして、ほとんどのブラウザにおいて、ラベルをフォーム入力欄に結びつけることは、ラベルをクリックして当該フォーム要素を選択 /
+            アクティブ化することが可能なことを意味します。このことにより、入力欄に対して、より大きなヒット領域を与えることになり、したがって、入力欄が選択しやすくなります。</p>
+
+          <div class="note notecard">
+            <p><strong>注</strong>: <a href="https://mdn.github.io/learning-area/accessibility/html/good-form.html"
+                data-flaw="link12" class="external" rel=" noopener">good-form.html</a> と <a
+                href="https://mdn.github.io/learning-area/accessibility/html/bad-form.html" data-flaw="link13"
+                class="external" rel=" noopener">bad-form.html</a> で、いくつかの良いフォーム例と悪いフォーム例を見られます。</p>
+          </div>
+
+          <h2 id="accessible_data_tables"><a href="#accessible_data_tables"
+              title="permalink to アクセシブルなデータテーブル">アクセシブルなデータテーブル</a></h2>
+          <div>
+            <p>基本的なデータテーブルは、たとえば以下のように、とても簡素なマークアップで書けます。</p>
+            <div class="code-example">
+              <pre
+                class="brush: html notranslate"><code>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>age<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>gender<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>gabriel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>13<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>male<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>elva<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>female<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>freida<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>female<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span></code></pre>
+            </div>
+
+            <p>
+              しかしこれには問題があります。スクリーンリーダーのユーザーには、行または列をデータの集まりとしてまとめて関連づける手段が何もないのです。こうした関連づけを行うには、見出し行がどれなのか、見出し行は複数の行を統率しているのか、複数の列を統率しているのか、などといったことを知らねばなりません。こうしたことは、上記のテーブルでは、視覚的に行われる以外にありません
+              (<a href="https://mdn.github.io/learning-area/accessibility/html/bad-table.html" data-flaw="link14"
+                class="external" rel=" noopener">bad-table.html</a> を参照して、その例をご自分で試してみてください)。</p>
+
+            <p>では、 <a
+                href="https://github.com/mdn/learning-area/blob/master/css/styling-boxes/styling-tables/punk-bands-complete.html"
+                class="external" rel=" noopener">パンクバンドのテーブルの例</a> を見てみましょう。ここでは、多少のアクセシビリティ支援が機能していることが分かりますね。</p>
+
+            <ul>
+              <li>テーブルの見出しは、 <a href="/ja/docs/Web/HTML/Element/th"><code>&lt;th&gt;</code></a>
+                要素を用いて定義されています。さらに、<code>scope</code>
+                属性を使って、その見出しが行に対する見出しなのか列に対する見出しなのかを指定することもできます。こうすると、スクリーンリーダーが一つの単位として処理できる、データの完全なグループが示されることになります。
+              </li>
+              <li><a href="/ja/docs/Web/HTML/Element/caption"><code>&lt;caption&gt;</code></a>
+                要素と、<code>&lt;table&gt;</code> の
+                <code>summary</code> 属性は、どちらも似たような役割を果たします。テーブルに対する alt
+                テキストとして機能し、スクリーンリーダーのユーザーに対して、テーブルの中身についての有用で手短な要約を示すのです。<code>&lt;caption&gt;</code>
+                が一般に好ましいのですが、それは、晴眼者のユーザーに対しても <code>&lt;caption&gt;</code>
+                の中身がアクセシブルだからであり、晴眼者のユーザーもその中身を有用だと思うでしょう。実際には、(必ずしも) 二つとも必要というわけではありません。
+              </li>
+            </ul>
+
+            <div class="note notecard">
+              <p><strong>注</strong>: アクセシブルなデータテーブルにまつわる更なる詳細は、<a href="/ja/docs/Learn/HTML/Tables/Advanced">HTML
+                  テーブルの発展的な機能とアクセシビリティ</a> という記事を参照してください。</p>
+            </div>
+          </div>
+          <h2 id="text_alternatives"><a href="#text_alternatives" title="Permalink to 代替テキスト">代替テキスト</a></h2>
+          <div>
+            <p>テキストによるコンテンツは本質的にアクセシブルですが、マルチメディア・コンテンツについては必ずしも同じことが言えるわけではありません。画像 /
+              動画コンテンツは視覚障碍者には見えず、音声コンテンツは聴覚障碍者には聞こえません。動画と音声のコンテンツについては、<a
+                href="/ja/docs/Learn/Accessibility/Multimedia">アクセシブルなマルチメディア</a> という記事で後に詳しく扱うことにしますが、本記事では、ごく普通の <a
+                href="/ja/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a> 要素についてのアクセシビリティを見てゆきましょう。</p>
+
+            <p><a href="https://mdn.github.io/learning-area/accessibility/html/accessible-image.html" data-flaw="link15"
+                class="external" rel=" noopener">accessible-image.html</a> という簡単な例を書き上げました。これは、4 枚の同じ画像を含んでいます。</p>
+
+            <pre class="notranslate">
+          &lt;img src="dinosaur.png"&gt;
+          &lt;img src="dinosaur.png"
+               alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."&gt;
+          &lt;!--
+          [alt 属性の訳: 赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります。]
+          --&gt;
+
+          &lt;img src="dinosaur.png"
+               alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."
+               title="The Mozilla red dinosaur"&gt;
+          &lt;!--
+          [alt 属性の訳: 赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります。]
+          [title 属性の訳: Mozilla の赤い恐竜]
+          --&gt;
+
+          &lt;img src="dinosaur.png" aria-labelledby="dino-label"&gt;
+
+          &lt;p id="dino-label"&gt;The Mozilla red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.&lt;/p&gt;
+          &lt;!--
+          [p 要素の中身の訳: Mozilla の赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります。]
+          --&gt;</pre>
+
+            <p>1 枚目の画像は、スクリーンリーダーで見たときに、実際のところ大した手助けをユーザーに与えてはくれません。たとえば VoiceOver は、「/dinosaur.png,
+              image」と読み上げます。なんらかの手助けを提供しようとしてファイル名を読み上げるわけです。この例では、ユーザーは、少なくともこれがある種の恐竜なのだと知ることでしょうが、機械で生成されたファイル名とともにファイルが
+              (たとえばディジタルカメラから) アップロードされる場合もよくありますし、そうしたファイル名は画像の中身に対する文脈を何も与えてはくれないでしょう。</p>
+
+            <div class="note notecard">
+              <p><strong>注</strong>:&nbsp;
+                これこそが、画像の内部にテキストコンテンツを決して含めるべきではない理由です。スクリーンリーダーは、まったくそのテキストコンテンツにアクセスできません。それに、他の欠点もあります。すなわち、そのテキストコンテンツを選択することもコピー
+                / ペーストすることもできません。画像の内部にテキストコンテンツを含めるなどということは、とにかくしないでください!</p>
+            </div>
+
+            <p>スクリーンリーダーは、2 枚目の画像に出くわすと、alt
+              属性を丸々読み上げます。つまり、「赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります」と読み上げます。</p>
+
+            <p>この例は、いわゆる <strong>alt テキスト</strong>が万一使えない場合に備えて意味のあるファイル名を使うことだけでなく、可能な場合にはいつでも alt テキストを
+              <code>alt</code>
+              属性において確実に提供しておくことの重要性を、際立たせるものです。<code>alt</code>
+              属性の中身は常に、画像の端的な描写と、画像が視覚的に伝えているものとを提供すべきであることに、注意してください。ここには、個人的な知識や追加的な説明を何も含めるべきではありません。なぜなら、以前にその画像に出くわしたことのない人にとって有益ではないからです。
+            </p>
+
+            <p>考えるべきことの一つは、画像がコンテンツの内部で意味を持っているのか、あるいは、純粋に視覚的装飾のためのものであって意味は持たないのか、ということです。もし画像が装飾用であれば、その画像を CSS
+              背景画像としてページ内に含めるだけにする方が良いのです。</p>
+
+            <div class="note notecard">
+              <p><strong>注</strong>: 画像の実装とベスト・プラクティスについての更なる多くの情報については、<a
+                  href="/ja/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML">Images in HTML</a> と <a
+                  href="/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">Responsive images</a> をお読みください。
+              </p>
+            </div>
+
+            <p>文脈のある追加的な情報をどうしても提示したい場合、その情報は、画像の周囲のテキストの中か、あるいは、上記のように <code>title</code>
+              属性の内部に入れるべきです。この場合、ほとんどのスクリーンリーダーは、<code>alt</code> テキストと、<code>title</code>
+              属性と、ファイル名とを読み上げるでしょう。さらに、マウスオーバーしたときには、ブラウザが <code>title</code> テキストをツールチップとして表示します。</p>
+
+            <p><img alt="" src="title-attribute.png" style="display: block; margin: 0 auto;" data-flaw="image4"
+                loading="lazy">
+            </p>
+
+            <p>4 番目の方法についてもざっと見ておきましょう。</p>
+
+            <div class="code-example">
+              <pre class="brush: html notranslate">
+            <code>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dinosaur.png<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dino-label<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dino-label<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>The Mozilla red Tyrannosaurus ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+            </div>
+
+            <p>この場合、<code>alt</code> 属性をまったく使っていません。その代わり、画像についての説明を通常のテキスト段落として提示し、その段落に <code>id</code> を与え、そして、その
+              <code>id</code> を参照するための <code>aria-labelledby</code> 属性を用いました。こうすると、スクリーンリーダーに、その段落をその画像についての alt テキスト /
+              ラベルとして使わせることになります。これは、複数の画像に対して同じテキストをラベルとして使いたい場合に、とりわけ有用です (こうしたことは、<code>alt</code> を使ってではできない事柄なのです)。
+            </p>
+
+            <div class="note notecard">
+              <p><strong>注</strong>: <code>aria-labelledby</code> は <a href="https://www.w3.org/TR/wai-aria-1.1/"
+                  class="external" rel=" noopener">WAI-ARIA</a>
+                仕様の一部です。これのおかげで開発者は、必要な箇所においてスクリーンリーダーのアクセシビリティを高めるために、自分のマークアップに追加的な意味 (セマンティクス)
+                を足すことができます。これがどのように機能するのかについての更なる情報を知るには、<a href="/ja/docs/Learn/Accessibility/WAI-ARIA_basics">WAI-ARIA
+                  の基本</a>
+                の記事をお読みください。</p>
+            </div>
+          </div>
+          <h3 id="other_text_alternative_mechanisms"><a href="#other_text_alternative_mechanisms"
+              title="Permalink to その他の代替テキストの仕組み">その他の代替テキストの仕組み</a></h3>
+          <div>
+            <p>画像には、説明的テキストを提供するのに利用可能な別の仕組みもあります。たとえば、画像についての広範囲にわたる説明を含む別のウェブドキュメントを指すことを意図した、<code>longdesc</code>
+              属性があります。たとえば以下のようなものです。</p>
+
+            <div class="code-example">
+              <pre
+                class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dinosaur.png<span class="token punctuation">"</span></span> <span class="token attr-name">longdesc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dino-info.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+            </div>
+
+            <p>これは良い考えのように思えます。というのも、とりわけ、多くの情報が載っている大きな図表のようなインフォグラフィックを、代わりにアクセシブルなデータテーブル (前節を参照)
+              として表現することがおそらくは可能でしょうから。しかし、<code>longdesc</code>
+              は、スクリーンリーダーによっていつもサポートされているわけではありませんし、スクリーンリーダー以外のものを使っているユーザーにとっては、コンテンツがまったくアクセス不能です。まず間違いなく、画像と同じページに長い説明を含めるか、あるいは、通常のリンクを使って長い説明にリンクする方が、ずっと良いのです。
+            </p>
+
+            <p>HTML5 は、<a href="/ja/docs/Web/HTML/Element/figure"><code>&lt;figure&gt;</code></a> と <a
+                href="/ja/docs/Web/HTML/Element/figcaption"><code>&lt;figcaption&gt;</code></a>
+              という二つの新規要素を含みます。これらは、なんらかの種類の図面
+              (任意のものであってよく、必ずしも画像とは限りません) を、図面キャプション (説明文) と結びつけることになっているものです。</p>
+
+            <div class="code-example">
+              <pre class="brush: html notranslate">
+            <code>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dinosaur.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Mozilla のティラノサウルス<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">&gt;</span></span>赤いティラノサウルス・レックス。人間のように直立する二足歩行の恐竜で、腕は小さく、頭部は大きくて多くの鋭い歯があります。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
+            </code>
+            </pre>
+            </div>
+
+            <p>あいにく、ほとんどのスクリーンリーダーは、まだ、図面キャプションを図面と結びつけてはくれないようです。ですが、この要素構造は CSS
+              でのスタイルづけにとって有益ですし、ソース内で画像の隣にその画像の説明を配置するための手段を与えてもくれます。</p>
+          </div>
+          <h3 id="empty_alt_attributes"><a href="#empty_alt_attributes" title="Permalink to 空の代替テキスト">空の代替テキスト</a></h3>
+          <div>
+            <div class="code-example">
+              <pre class="brush: html notranslate">
+            <code>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>article-icon.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            ティラノサウルス・レックス: 恐竜の王
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+            </code>
+            </pre>
+            </div>
+
+            <p>画像がページのデザインに含まれるけれども、主目的は視覚的装飾である、といった場合もあるかもしれません。上記のコード例において、画像の <code>alt</code>
+              属性が空であることにお気づきでしょう。これは、スクリーンリーダーに画像を認識させるものですが、その画像を説明しようとさせるものではありません
+              (説明する代わりに、スクリーンリーダーは、単に「画像」とか何とか言うでしょう)。
+            </p>
+
+            <p><code>alt</code> を含めないようにする代わりに空の <code>alt</code> を用いる理由は、<code>alt</code> が与えられていない場合には多くのスクリーンリーダーが画像の
+              URL
+              を丸々全部発声するからです。上記の例において画像は、その画像が結びつけられている見出しに対する視覚的装飾として機能しています。このような場合、および、画像が単に装飾にすぎず中身の価値がない場合には、画像に空の
+              <code>alt</code> を入れるべきです。別の選択肢は、<code>role="presentation"</code> という ARIA <code>role</code>
+              属性を使うことです。こうすることによっても、スクリーンリーダーに代替テキスト (<code>alt</code> テキスト) を読み上げるのをやめさせることができます。
+            </p>
+
+            <div class="note notecard">
+              <p><strong>注</strong>: もし可能なら、単なる修飾であるような画像を表示するのには CSS を使うべきです。</p>
+            </div>
+          </div>
+          <h2 id="summary"><a href="#summary" title="Permalink to 要約">要約</a></h2>
+          <div>
+            <p>&nbsp;今や読者の皆さんは、ほとんどの場合にアクセシブルな HTML を書くことについて、熟知しているはずです。<a
+                href="/ja/docs/Learn/Accessibility/WAI-ARIA_basics">WAI-ARIA の基本</a>
+              の記事も、この知識の抜けを埋めてくれるでしょうが、本記事でもその基本には気を配ってきました。次は、CSS と JavaScript を検討しましょう。そして、CSS と JavaScript
+              の良い使い方やまずい使い方によって、アクセシビリティがどのような影響を受けるのかを検討しましょう。
+            </p>
+          </div>
+        </div>
         <button id="fix-q-3" class="button fix-button">教材 3の学習を終了する</button>
       </div>
       <div id="test-3" class="is-hidden">
