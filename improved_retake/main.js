@@ -152,6 +152,8 @@ buttonMaterialOneTestStart.onclick = function (e) {
   materialTestOneBeforeModal.classList.add('is-hidden');
   materialQ1.classList.add('is-hidden');
   materialTest1.classList.remove('is-hidden');
+
+  window.scroll({ top: 0, behavior: 'smooth' });
 };
 /* 教材 1 テスト終了 */
 submitTest1.onclick = function (e) {
@@ -188,6 +190,8 @@ endTest1.onclick = async function (e) {
   materialContentTwo.classList.remove('material-other');
   materialContentTwo.classList.add('material-current');
   contentName.innerHTML = '教材 2';
+
+  window.scroll({ top: 0, behavior: 'smooth' });
 
   currentState = 'materialTwo';
 };
