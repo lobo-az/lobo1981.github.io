@@ -172,11 +172,13 @@ continueTest1.onclick = function (e) {
   materialTestOneAfterModal.classList.add('is-hidden');
 };
 /* 教材 1 小テストを終了し、結果をサーバに送信する */
-endTest1.onclick = function (e) {
+endTest1.onclick = async function (e) {
   if (currentState !== 'materialOne') {
     e.preventDefault();
     return;
   }
+
+  await sendTestResult(1);
 
   materialTest1.classList.add('is-hidden');
   materialTestOneAfterModal.classList.add('is-hidden');
@@ -240,11 +242,13 @@ continueTest2.onclick = function (e) {
   materialTestTwoAfterModal.classList.add('is-hidden');
 };
 /* 教材 2 小テストを終了し、結果をサーバに送信する */
-endTest2.onclick = function (e) {
+endTest2.onclick = async function (e) {
   if (currentState !== 'materialTwo') {
     e.preventDefault();
     return;
   }
+
+  await sendTestResult(2);
 
   materialTest2.classList.add('is-hidden');
   materialTestTwoAfterModal.classList.add('is-hidden');
@@ -308,15 +312,14 @@ continueTest3.onclick = function (e) {
   materialTestThreeAfterModal.classList.add('is-hidden');
 };
 /* 教材 3 小テストを終了し、結果をサーバに送信する */
-endTest3.onclick = function (e) {
+endTest3.onclick = async function (e) {
   if (currentState !== 'materialThree') {
     e.preventDefault();
     return;
   }
 
-  materialTest3.classList.add('is-hidden');
-  materialTestThreeAfterModal.classList.add('is-hidden');
-  materialOfFixModal.classList.remove('is-hidden');
+  await sendTestResult(3);
+
   window.clearInterval(intervalId);
 
   let sendPostData = {
@@ -326,7 +329,7 @@ endTest3.onclick = function (e) {
   };
   let sendParams = Object.assign(sendPostData);
 
-  fetch(SEND_TIME_COUNT_URL, {
+  await fetch(SEND_TIME_COUNT_URL, {
     method: 'POST',
     body: JSON.stringify(sendParams),
     headers: {
@@ -334,6 +337,10 @@ endTest3.onclick = function (e) {
       'Content-Type': 'application/json'
     }
   });
+
+  materialTest3.classList.add('is-hidden');
+  materialTestThreeAfterModal.classList.add('is-hidden');
+  materialOfFixModal.classList.remove('is-hidden');
 
   currentState = 'materialOfFix';
 };
