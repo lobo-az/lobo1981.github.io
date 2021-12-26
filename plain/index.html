@@ -208,11 +208,14 @@
 
             <div id="before-modal" class="overlay">
               <div class="modal-content">
-                <h3>学習参加ありがとうございます。</h3>
+                <h3>教材の評価実験への参加ありがとうございます。</h3>
                 <p>
                   テスト結果の送信について
-                  emailを入力してください。時間計測のために利用します。研究目的以外の利用はしません。
-                  教材を学び始めるときにStartを押してください。教材を学び終えたらStopを押してください。教材を学び終えるまでの時間を計測します。
+                  ブラウザの下部にメールアドレス入力欄が現れるので、学習を始める際に、先ほどのアンケートと同じメールアドレスを入力して、Startをクリックし、学習が終わったら、Stopを押してください。
+
+                  教材の最初から、順番に最後まで、教材を読み進めてください。
+
+                  元教材の内容を再現した教材となっていますが、一部リンクや検索機能に関してこの教材では機能は無効となっています。御了承ください。
                 </p>
                 <button id="close-before-modal">教材の学習を始める</button>
               </div>
@@ -223,8 +226,7 @@
                 <h3>テスト提出ありがとうございました</h3>
                 <p>事後アンケートに進んでください。</p>
                 <button>
-                  <a
-                    href="https://docs.google.com/forms/d/10VmjC__APeUemlMvo4UGTyxaFWHek8yFvTlRAPTrXvE/edit?usp=sharing">事後アンケートに進む</a>
+                  <a href="https://forms.gle/zY3wUYpMFSAYUBVWA" target="_new" rel="noopener noreferrer">事後アンケートに進む</a>
                 </button>
               </div>
             </div>
@@ -233,8 +235,11 @@
               <tbody>
                 <tr>
                   <th scope="row">前提知識:</th>
-                  <td>基本的なコンピュータの知識、HTML に関する基本的な理解 (<a href="/ja/docs/Learn/HTML/Introduction_to_HTML">HTML 概論</a>
-                    を参照)、<a href="/ja/docs/Learn/Accessibility/What_is_accessibility">アクセシビリティとは何か</a> に関する理解。</td>
+                  <td>基本的なコンピュータの知識、HTML に関する基本的な理解 (<a
+                      href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML" target="_new"
+                      rel="noopener">HTML 概論</a>
+                    を参照)、<a href="https://developer.mozilla.org/ja/docs/Learn/Accessibility/What_is_accessibility"
+                      target="_new" rel="noopener">アクセシビリティとは何か</a> に関する理解。</td>
                 </tr>
                 <tr>
                   <th scope="row">学習目標:</th>
@@ -394,7 +399,8 @@
             </p>
 
             <p><a href="https://mdn.github.io/learning-area/accessibility/html/table-layout.html" data-flaw="link4"
-                class="external" rel=" noopener">table-layout.html</a> の例を試してみてください。これは、以下のような感じになっています。</p>
+                class="external" target="_new" rel="noopener">table-layout.html</a> の例を試してみてください。これは、以下のような感じになっています。
+            </p>
 
             <div class="code-example">
               <pre
@@ -517,17 +523,18 @@
               よりモダンな構造の例をスクリーンリーダーで試してみれば、もはやレイアウト・マークアップが妨げになることもなく、コンテンツの読み上げを混乱させることもない、とわかるでしょう。また、これは、コード・サイズの点で、より無駄がなく、より小さくなっています。これが意味することは、コードの保守が容易になるということ、そして、ユーザがダウンロードするのに帯域幅が小さくて済むということです
               (特に、接続が遅い人たちにとってはこれが効きます)。</p>
 
-            <p>レイアウトを作る際に考慮すべきもう一つの事柄は、上記の例に見られるように HTML5 の意味的要素を用いることです (<a
-                href="/ja/docs/Web/HTML/Element#content_sectioning" data-flaw="link6">コンテンツセクショニング</a>&nbsp;を参照)。
-              入れ子になった <a href="/ja/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a>
-              要素だけを使ってレイアウトを作ることもできますが、適切なセクショニング (区分け) 要素を使って、主要なナビゲーション&nbsp;(<a
-                href="/ja/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a>)&nbsp;やフッター (<a
-                href="/ja/docs/Web/HTML/Element/footer"><code>&lt;footer&gt;</code></a>)&nbsp;や繰り返し現れるコンテンツ単位&nbsp;(<a
-                href="/ja/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code></a>)
+            <p>レイアウトを作る際に考慮すべきもう一つの事柄は、上記の例に見られるように HTML5 の意味的要素を用いることです
+              入れ子になった <code>&lt;div&gt;</code>
+              要素だけを使ってレイアウトを作ることもできますが、適切なセクショニング (区分け) 要素を使って、主要なナビゲーション&nbsp;(
+              <code>&lt;nav&gt;</code>)&nbsp;やフッター (
+              <code>&lt;footer&gt;</code>)&nbsp;や繰り返し現れるコンテンツ単位&nbsp;(
+              <code>&lt;article&gt;</code>)
               などを囲う方が良いのです。これらの区分け要素は、いまナビゲートしている最中のコンテンツについての追加的な手がかりをユーザーに与えられるように、スクリーンリーダー (および他のツール) に追加的な意味
               (セマンティクス) を提供してくれます (スクリーンリーダー・サポートとはどのようなものなのかについての考え方に関しては、<a
                 href="http://www.weba11y.com/blog/2016/04/22/screen-reader-support-for-new-html5-section-elements/"
-                class="external" rel=" noopener">Screen Reader Support for new HTML5 Section Elements</a> を参照)。</p>
+                class="external" target="_new" rel=" noopener">Screen Reader Support for new HTML5 Section Elements</a>
+              を参照)。
+            </p>
 
             <div class="note notecard">
               <p><strong>注</strong>: コンテンツは、ちゃんと意味的なものにしておき、レイアウトも魅惑的にしておくだけでなく、ソース順において論理的に意味をなすようにもしておくべきです。あとで CSS
@@ -543,9 +550,10 @@
 
             <p>UI コントロールのアクセシビリティに対する一つの重要な側面は、ブラウザがデフォルトでは 、UI コントロールをキーボードで操作できるようにしている、ということです。このことは、<a
                 href="https://mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html"
-                data-flaw="link7" class="external" rel=" noopener">native-keyboard-accessibility.html</a>&nbsp;の例 (<a
+                data-flaw="link7" class="external" target="_new"
+                rel="noopener">native-keyboard-accessibility.html</a>&nbsp;の例 (<a
                 href="https://github.com/mdn/learning-area/blob/master/tools-testing/cross-browser-testing/accessibility/native-keyboard-accessibility.html"
-                class="external" rel=" noopener">ソースコード</a>&nbsp;を参照)
+                class="external" target="_new" rel="noopener">ソースコード</a>&nbsp;を参照)
               を用いて試せます。これを新規タブで開いて、タブキーを押してみてください。二、三回押してみた後には、フォーカス可能な異なる要素の間をタブ・フォーカスが動き回り始めたのだと分かるはずです。どの要素にフォーカスが当たっているのかが分かるように、どのブラウザでも、フォーカスの当たっている要素には、ハイライトされたデフォルトのスタイルが付与されます
               (そのスタイルは、異なるブラウザ間では少し差があります)。</p>
 
@@ -554,14 +562,14 @@
                 data-flaw="image_widths1" loading="lazy"></p>
 
             <p>その後、エンターキー / リターンキーを押すと、フォーカスの当たっているリンクをたどることもできますし、または、ボタンを押すこともできますし (ボタンにメッセージ警告を出させるための JavaScript
-              を含めておきました)、あるいは、テキスト入力欄にテキストを入力するためのタイピングを開始することもできます (他のフォーム要素には別のコントロールがあります。たとえば、<a
-                href="/ja/docs/Web/HTML/Element/select"><code>&lt;select&gt;</code></a>
-              要素は、選択肢を表示させることや、上下の矢印キーを用いて選択肢の間を行ったり来たりさせることができます)。</p>
+              を含めておきました)、あるいは、テキスト入力欄にテキストを入力するためのタイピングを開始することもできます (他のフォーム要素には別のコントロールがあります。たとえば、
+              <code>&lt;select&gt;</code>
+              要素は、選択肢を表示させることや、上下の矢印キーを用いて選択肢の間を行ったり来たりさせることができます)。
+            </p>
 
             <div class="note notecard">
-              <p><strong>注</strong>: 異なるブラウザでは、異なるキーボード・コントロール・オプションを使用可能としている場合があります。さらに詳しいことは、<a
-                  href="/ja/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#using_native_keyboard_accessibility"
-                  data-flaw="link8">Using native keyboard accessibility</a>&nbsp;を参照してください。</p>
+              <p><strong>注</strong>: 異なるブラウザでは、異なるキーボード・コントロール・オプションを使用可能としている場合があります。さらに詳しいことは、
+                Using native keyboard accessibility&nbsp;を参照してください。</p>
             </div>
 
             <p>こうした振る舞いは、たとえば以下のように単に適切な要素を用いるだけで、本質的にはただで手に入ります。</p>
@@ -605,11 +613,13 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
             </div>
 
-            <p>これは、リンクやボタンやフォーム要素やラベルを適切に用いることを意味しています (フォーム・コントロール用の&nbsp;<a
-                href="/ja/docs/Web/HTML/Element/label"><code>&lt;label&gt;</code></a> 要素を含めています)。</p>
+            <p>これは、リンクやボタンやフォーム要素やラベルを適切に用いることを意味しています (フォーム・コントロール用の&nbsp;
+              <code>&lt;label&gt;</code>要素を含めています)。
+            </p>
 
-            <p>しかし、またしてもですが、人が HTML で変なことをする場合がときにはあるものです。たとえば、次のように <a
-                href="/ja/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a> を用いてマークアップしたボタンを見かけることも、ときにはあります。</p>
+            <p>しかし、またしてもですが、人が HTML で変なことをする場合がときにはあるものです。たとえば、次のように
+              <code>&lt;div&gt;</code>を用いてマークアップしたボタンを見かけることも、ときにはあります。
+            </p>
 
             <div class="code-example">
               <pre
@@ -618,19 +628,21 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the third button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>And me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
             </div>
 
-            <p>しかし、そうしたコードを使うことは、勧められることではありません。単に <a
-                href="/ja/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a>
-              要素を使っていたなら得られていたはずの、ネイティブなキーボード・アクセシビリティを直ちに失ってしまううえに、当該ボタンが得るデフォルトの CSS スタイル付けを何も得られないからです。</p>
+            <p>しかし、そうしたコードを使うことは、勧められることではありません。単に
+              <code>&lt;button&gt;</code>
+              要素を使っていたなら得られていたはずの、ネイティブなキーボード・アクセシビリティを直ちに失ってしまううえに、当該ボタンが得るデフォルトの CSS スタイル付けを何も得られないからです。
+            </p>
 
             <h4 id="building_keyboard_accessibility_back_in" name="Building_keyboard_accessibility_back_in">
               キーボード・アクセシビリティを呼び戻すように盛り込む</h4>
 
             <p>そうした利点を呼び戻すように追加するには、ちょっとした作業が必要です (<a class="external external-icon"
                 href="https://mdn.github.io/learning-area/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html"
-                data-flaw="link9" rel=" noopener">fake-div-buttons.html</a> で例示的コードを試せます。<a
+                data-flaw="link9" target="_new" rel="noopener">fake-div-buttons.html</a> で例示的コードを試せます。<a
                 class="external external-icon"
                 href="https://github.com/mdn/learning-area/blob/master/tools-testing/cross-browser-testing/accessibility/fake-div-buttons.html"
-                rel=" noopener">ソースコード</a> も参照してください)。ここでは、各ボタンに <code>tabindex="0"</code> という属性を付与することによって、見せかけの
+                target="_new" rel="noopener">ソースコード</a> も参照してください)。ここでは、各ボタンに <code>tabindex="0"</code>
+              という属性を付与することによって、見せかけの
               <code>&lt;div&gt;</code> ボタンにフォーカスを当てられるようにしました (タブキーを通じてのフォーカスを含みます)。
             </p>
 
@@ -641,12 +653,13 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-message</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>This is from the third button<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>And me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
             </div>
 
-            <p>基本的には、<a href="/ja/docs/Web/HTML/Global_attributes#attr-tabindex"><code>tabindex</code></a>
+            <p>基本的には、<code>tabindex</code>
               属性は、タブキーでの移動が可能な要素に、単なるデフォルトのソース順でのタブ移動の代わりとなる特別あつらえのタブ順序 (正数の順で指定されるもの)
-              を持たせられるようにすることを、主に意図したものです。これはほとんどの場合、筋の悪い考え方です。なぜなら、重大な混乱を招きかねないからです。本当に必要な場合にのみ、<a
-                href="/ja/docs/Web/HTML/Global_attributes#attr-tabindex"><code>tabindex</code></a>
+              を持たせられるようにすることを、主に意図したものです。これはほとんどの場合、筋の悪い考え方です。なぜなら、重大な混乱を招きかねないからです。本当に必要な場合にのみ、
+              <code>tabindex</code>
               属性を使うようにしてください。たとえば、レイアウトによって、物事がソースコードとはまるで違った見かけ上の順序で示されており、かつ、より論理的に物事を機能させたいと望んでいるような場合です。<code>tabindex</code>
-              には、あと二つの選択肢があります。</p>
+              には、あと二つの選択肢があります。
+            </p>
 
             <ul>
               <li><code>tabindex="0"</code> —
@@ -667,11 +680,11 @@
             </div>
 
             <p>ここでは、キーボード上でいつボタンが押されたのかを検出するために、<code>document</code> オブジェクトにリスナーを追加しています。どのボタンが押されたのかを、イベント・オブジェクトの
-              <code><a href="/ja/docs/Web/API/KeyboardEvent/keyCode">keyCode</a></code> プロパティを介して調べています。 [訳注:
+              <code>keyCode</code> プロパティを介して調べています。 [訳注:
               以上の二つの文の「ボタン」はキーボード上のキーのことのようです。また、<code>keyCode</code> プロパティは非推奨になっています。]もしエンターキー /
               リターンキーに合致するキーコードだったら、<code>document.activeElement.onclick()</code> を用い、ボタンの <code>onclick</code>
               ハンドラーに記憶されている関数を実行します [訳注: この文の「ボタン」は <code>&lt;div&gt;</code>
-              ボタンのことのようです]。<code><a href="/ja/docs/Web/API/Document/activeElement">activeElement</a></code>
+              ボタンのことのようです]。<code>activeElement</code>
               は、ページ上で現在フォーカスの当たっている要素を教えてくれます。
             </p>
 
@@ -711,13 +724,13 @@
             </div>
 
             <div class="note notecard">
-              <p><strong>注</strong>: リンクの実装とベスト・プラクティスに関するさらなる情報を、<a
-                  href="/ja/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks">Creating hyperlinks</a>
+              <p><strong>注</strong>: リンクの実装とベスト・プラクティスに関するさらなる情報を、
+                Creating hyperlinks
                 &nbsp;という記事で知ることができます。また、いくつかの良い例と悪い例を、<a
                   href="https://mdn.github.io/learning-area/accessibility/html/good-links.html" data-flaw="link10"
-                  class="external" rel=" noopener">good-links.html</a> と <a
+                  class="external" target="_new" rel="noopener">good-links.html</a> と <a
                   href="https://mdn.github.io/learning-area/accessibility/html/bad-links.html" data-flaw="link11"
-                  class="external" rel=" noopener">bad-links.html</a> で見ることもできます。</p>
+                  class="external" target="_new" rel="noopener">bad-links.html</a> で見ることもできます。</p>
             </div>
 
             <p>フォーム・ラベルも重要です。なぜなら、各フォーム入力欄に何を入力する必要があるのかについての手がかりを与えてくれるからです。以下のものは、十分に筋の通った例のように見えます。</p>
@@ -752,9 +765,9 @@
 
             <div class="note notecard">
               <p><strong>注</strong>: <a href="https://mdn.github.io/learning-area/accessibility/html/good-form.html"
-                  data-flaw="link12" class="external" rel=" noopener">good-form.html</a> と <a
+                  data-flaw="link12" class="external" target="_new" rel="noopener">good-form.html</a> と <a
                   href="https://mdn.github.io/learning-area/accessibility/html/bad-form.html" data-flaw="link13"
-                  class="external" rel=" noopener">bad-form.html</a> で、いくつかの良いフォーム例と悪いフォーム例を見られます。</p>
+                  class="external" target="_new" rel="noopener">bad-form.html</a> で、いくつかの良いフォーム例と悪いフォーム例を見られます。</p>
             </div>
           </div>
           <h2 id="accessible_data_tables"><a href="#accessible_data_tables"
@@ -791,18 +804,19 @@
             <p>
               しかしこれには問題があります。スクリーンリーダーのユーザーには、行または列をデータの集まりとしてまとめて関連づける手段が何もないのです。こうした関連づけを行うには、見出し行がどれなのか、見出し行は複数の行を統率しているのか、複数の列を統率しているのか、などといったことを知らねばなりません。こうしたことは、上記のテーブルでは、視覚的に行われる以外にありません
               (<a href="https://mdn.github.io/learning-area/accessibility/html/bad-table.html" data-flaw="link14"
-                class="external" rel=" noopener">bad-table.html</a> を参照して、その例をご自分で試してみてください)。</p>
+                class="external" target="_new" rel="noopener">bad-table.html</a> を参照して、その例をご自分で試してみてください)。</p>
 
             <p>では、 <a
                 href="https://github.com/mdn/learning-area/blob/master/css/styling-boxes/styling-tables/punk-bands-complete.html"
-                class="external" rel=" noopener">パンクバンドのテーブルの例</a> を見てみましょう。ここでは、多少のアクセシビリティ支援が機能していることが分かりますね。</p>
+                class="external" target="_new" rel="noopener">パンクバンドのテーブルの例</a>
+              を見てみましょう。ここでは、多少のアクセシビリティ支援が機能していることが分かりますね。</p>
 
             <ul>
-              <li>テーブルの見出しは、 <a href="/ja/docs/Web/HTML/Element/th"><code>&lt;th&gt;</code></a>
+              <li>テーブルの見出しは、 <code>&lt;th&gt;</code>
                 要素を用いて定義されています。さらに、<code>scope</code>
                 属性を使って、その見出しが行に対する見出しなのか列に対する見出しなのかを指定することもできます。こうすると、スクリーンリーダーが一つの単位として処理できる、データの完全なグループが示されることになります。
               </li>
-              <li><a href="/ja/docs/Web/HTML/Element/caption"><code>&lt;caption&gt;</code></a>
+              <li><code>&lt;caption&gt;</code>
                 要素と、<code>&lt;table&gt;</code> の <code>summary</code> 属性は、どちらも似たような役割を果たします。テーブルに対する alt
                 テキストとして機能し、スクリーンリーダーのユーザーに対して、テーブルの中身についての有用で手短な要約を示すのです。<code>&lt;caption&gt;</code>
                 が一般に好ましいのですが、それは、晴眼者のユーザーに対しても <code>&lt;caption&gt;</code>
@@ -810,19 +824,21 @@
             </ul>
 
             <div class="note notecard">
-              <p><strong>注</strong>: アクセシブルなデータテーブルにまつわる更なる詳細は、<a href="/ja/docs/Learn/HTML/Tables/Advanced">HTML
-                  テーブルの発展的な機能とアクセシビリティ</a> という記事を参照してください。</p>
+              <p><strong>注</strong>: アクセシブルなデータテーブルにまつわる更なる詳細は、HTML
+                テーブルの発展的な機能とアクセシビリティという記事を参照してください。</p>
             </div>
           </div>
           <h2 id="text_alternatives"><a href="#text_alternatives" title="Permalink to 代替テキスト">代替テキスト</a></h2>
           <div>
             <p>テキストによるコンテンツは本質的にアクセシブルですが、マルチメディア・コンテンツについては必ずしも同じことが言えるわけではありません。画像 /
-              動画コンテンツは視覚障碍者には見えず、音声コンテンツは聴覚障碍者には聞こえません。動画と音声のコンテンツについては、<a
-                href="/ja/docs/Learn/Accessibility/Multimedia">アクセシブルなマルチメディア</a> という記事で後に詳しく扱うことにしますが、本記事では、ごく普通の <a
-                href="/ja/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a> 要素についてのアクセシビリティを見てゆきましょう。</p>
+              動画コンテンツは視覚障碍者には見えず、音声コンテンツは聴覚障碍者には聞こえません。動画と音声のコンテンツについては、
+              アクセシブルなマルチメディアという記事で後に詳しく扱うことにしますが、本記事では、ごく普通の
+              <code>&lt;img&gt;</code>要素についてのアクセシビリティを見てゆきましょう。
+            </p>
 
             <p><a href="https://mdn.github.io/learning-area/accessibility/html/accessible-image.html" data-flaw="link15"
-                class="external" rel=" noopener">accessible-image.html</a> という簡単な例を書き上げました。これは、4 枚の同じ画像を含んでいます。</p>
+                class="external" target="_new" rel="noopener">accessible-image.html</a> という簡単な例を書き上げました。これは、4
+              枚の同じ画像を含んでいます。</p>
 
             <pre class="notranslate">&lt;img src="dinosaur.png"&gt;
 
@@ -869,9 +885,9 @@
               背景画像としてページ内に含めるだけにする方が良いのです。</p>
 
             <div class="note notecard">
-              <p><strong>注</strong>: 画像の実装とベスト・プラクティスについての更なる多くの情報については、<a
-                  href="/ja/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML">Images in HTML</a> と <a
-                  href="/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">Responsive images</a> をお読みください。
+              <p><strong>注</strong>: 画像の実装とベスト・プラクティスについての更なる多くの情報については、
+                Images in HTMLと
+                Responsive imagesをお読みください。
               </p>
             </div>
 
@@ -898,10 +914,10 @@
 
             <div class="note notecard">
               <p><strong>注</strong>: <code>aria-labelledby</code> は <a href="https://www.w3.org/TR/wai-aria-1.1/"
-                  class="external" rel=" noopener">WAI-ARIA</a>
+                  class="external" target="_new" rel="noopener">WAI-ARIA</a>
                 仕様の一部です。これのおかげで開発者は、必要な箇所においてスクリーンリーダーのアクセシビリティを高めるために、自分のマークアップに追加的な意味 (セマンティクス)
-                を足すことができます。これがどのように機能するのかについての更なる情報を知るには、<a href="/ja/docs/Learn/Accessibility/WAI-ARIA_basics">WAI-ARIA
-                  の基本</a> の記事をお読みください。</p>
+                を足すことができます。これがどのように機能するのかについての更なる情報を知るには、WAI-ARIA
+                の基本の記事をお読みください。</p>
             </div>
           </div>
           <h3 id="other_text_alternative_mechanisms"><a href="#other_text_alternative_mechanisms"
@@ -920,9 +936,10 @@
               は、スクリーンリーダーによっていつもサポートされているわけではありませんし、スクリーンリーダー以外のものを使っているユーザーにとっては、コンテンツがまったくアクセス不能です。まず間違いなく、画像と同じページに長い説明を含めるか、あるいは、通常のリンクを使って長い説明にリンクする方が、ずっと良いのです。
             </p>
 
-            <p>HTML5 は、<a href="/ja/docs/Web/HTML/Element/figure"><code>&lt;figure&gt;</code></a> と <a
-                href="/ja/docs/Web/HTML/Element/figcaption"><code>&lt;figcaption&gt;</code></a>
-              という二つの新規要素を含みます。これらは、なんらかの種類の図面 (任意のものであってよく、必ずしも画像とは限りません) を、図面キャプション (説明文) と結びつけることになっているものです。</p>
+            <p>HTML5 は、<code>&lt;figure&gt;</code>と
+              <code>&lt;figcaption&gt;</code>
+              という二つの新規要素を含みます。これらは、なんらかの種類の図面 (任意のものであってよく、必ずしも画像とは限りません) を、図面キャプション (説明文) と結びつけることになっているものです。
+            </p>
 
             <div class="code-example">
               <pre
@@ -962,8 +979,8 @@
           </div>
           <h2 id="summary"><a href="#summary" title="Permalink to 要約">要約</a></h2>
           <div>
-            <p>&nbsp;今や読者の皆さんは、ほとんどの場合にアクセシブルな HTML を書くことについて、熟知しているはずです。<a
-                href="/ja/docs/Learn/Accessibility/WAI-ARIA_basics">WAI-ARIA の基本</a>
+            <p>&nbsp;今や読者の皆さんは、ほとんどの場合にアクセシブルな HTML を書くことについて、熟知しているはずです。
+              WAI-ARIA の基本
               の記事も、この知識の抜けを埋めてくれるでしょうが、本記事でもその基本には気を配ってきました。次は、CSS と JavaScript を検討しましょう。そして、CSS と JavaScript
               の良い使い方やまずい使い方によって、アクセシビリティがどのような影響を受けるのかを検討しましょう。</p>
 
@@ -986,10 +1003,10 @@
               </path>
             </svg></a></div>
         <ul class="link-list-mdn">
-          <li><a href="/ja/docs/Web">Web Technologies</a></li>
-          <li><a href="/ja/docs/Learn">Learn Web Development</a></li>
-          <li><a href="/ja/docs/MDN/About">About MDN</a></li>
-          <li><a href="/ja/docs/MDN/Feedback">Feedback</a></li>
+          <li>Web Technologies</li>
+          <li>Learn Web Development</li>
+          <li>About MDN</li>
+          <li>Feedback</li>
         </ul>
         <ul class="link-list-moz">
           <li><a href="https://www.mozilla.org/about/" target="_blank" rel="noopener noreferrer">About</a></li>
