@@ -74,6 +74,13 @@ async function sendTestResult(questionNumber) {
     .find(row => row.startsWith('email'))
     .split('=')[1];
 
+  console.log('send test result');
+  console.log(document.getElementsByName(`q1-${questionNumber}`));
+  console.log(document.getElementsByName(`q2-${questionNumber}`));
+  console.log(document.getElementsByName(`q3-${questionNumber}`));
+  console.log(document.getElementsByName(`q4-${questionNumber}`));
+  console.log(document.getElementsByName(`q5-${questionNumber}`));
+
   let q1 = Array.from(document.getElementsByName(`q1-${questionNumber}`)).filter(function (o) { return o.checked; })[0].value;
   let q2 = Array.from(document.getElementsByName(`q2-${questionNumber}`)).filter(function (o) { return o.checked; })[0].value;
   let q3 = Array.from(document.getElementsByName(`q3-${questionNumber}`)).filter(function (o) { return o.checked; })[0].value;
