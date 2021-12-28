@@ -65,6 +65,9 @@
         教材 1の小テストを終了し、次の教材に移動します。
         よろしければ"小テストを終了する"ボタンを、小テストを続けるのであれば"小テストを続ける"ボタンを押してください。
       </p>
+      <p>
+        ボタンを押した後、テストの結果を送信しているため画面が切り替わるのに時間がかかる場合があります。
+      </p>
       <button id="end-test-1" class="button modal-button">
         小テストを終了する
       </button>
@@ -98,6 +101,9 @@
         教材 2の小テストを終了し、次の教材に移動します。
         よろしければ"小テストを終了する"ボタンを、小テストを続けるのであれば"小テストを続ける"ボタンを押してください。
       </p>
+      <p>
+        ボタンを押した後、テストの結果を送信しているため画面が切り替わるのに時間がかかる場合があります。
+      </p>
       <button id="end-test-2" class="button modal-button">
         小テストを終了する
       </button>
@@ -130,6 +136,9 @@
       <p>
         教材 3の小テストを終了し、次の教材に移動します。
         よろしければ"小テストを終了する"ボタンを、小テストを続けるのであれば"小テストを続ける"ボタンを押してください。
+      </p>
+      <p>
+        ボタンを押した後、テストの結果を送信しているため画面が切り替わるのに時間がかかる場合があります。
       </p>
       <button id="end-test-3" class="button modal-button">
         小テストを終了する
@@ -644,11 +653,11 @@
                 </div>
                 <div>
                   <input type="radio" id="test_4_2" name="q4-2" value="2">
-                  <label for="test_4_2">セクションをスクリーンリーダが読み上げる際、綺麗な発音となる。</label>
+                  <label for="test_4_2">セクションをスクリーンリーダーが認識し、要素の順序を踏まえて読み上げを行えるようになる。</label>
                 </div>
                 <div>
                   <input type="radio" id="test_4_2" name="q4-2" value="3">
-                  <label for="test_4_2">セクションをスクリーンリーダが読み上げる際、綺麗な発音となる。</label>
+                  <label for="test_4_2">スクリーンリーダーの操作が不要となり、全自動でWeb上のページ操作が可能になる。</label>
                 </div>
               </td>
             </tr>
@@ -748,7 +757,8 @@
           </div>
 
           <p>これは、リンクやボタンやフォーム要素やラベルを適切に用いることを意味しています (フォーム・コントロール用の&nbsp;
-            href="/ja/docs/Web/HTML/Element/label"><code>&lt;label&gt;</code></a> 要素を含めています)。</p>
+            <code>&lt;label&gt;</code>要素を含めています)。
+          </p>
 
           <p>しかし、またしてもですが、人が HTML で変なことをする場合がときにはあるものです。たとえば、次のように
             <code>&lt;div&gt;</code>を用いてマークアップしたボタンを見かけることも、ときにはあります。
@@ -1160,20 +1170,20 @@
           <tbody>
             <tr class="test-table-border">
               <td>
-                テーブルレイアウトを多用してはいけない理由を選択肢から選んでください。
+                divタグではなく、tableタグを利用してテーブルレイアウトを表現した方が良いのはなぜか。選択肢から選んでください。
               </td>
               <td>
                 <div>
                   <input type="radio" id="test_1_1" name="q1-3" value="1">
-                  <label for="test_1_1">テーブルレイアウトはHTMLで利用禁止になった。</label>
+                  <label for="test_1_1">tableタグはブラウザに標準で実装されているものであるため</label>
                 </div>
                 <div>
                   <input type="radio" id="test_1_2" name="q1-3" value="2">
-                  <label for="test_1_2">テーブルレイアウトはHTMLで利用禁止になった。</label>
+                  <label for="test_1_2">tableタグという名前がテーブルレイアウトを表しているから</label>
                 </div>
                 <div>
                   <input type="radio" id="test_1_3" name="q1-3" value="3">
-                  <label for="test_1_3">テーブルレイアウトはHTMLで利用禁止になった。</label>
+                  <label for="test_1_3">特別な対応をせずとも、タブキーなどマウス以外の代替手段など多様なアクセス方法を提供しやすいため</label>
                 </div>
               </td>
             </tr>
@@ -1184,15 +1194,15 @@
               <td>
                 <div>
                   <input type="radio" id="test_2_1" name="q2-3" value="1">
-                  <label for="test_2_1">テスト2 1</label>
+                  <label for="test_2_1">JavaScriptにおける新しいAPI群のことを指す。</label>
                 </div>
                 <div>
                   <input type="radio" id="test_2_2" name="q2-3" value="2">
-                  <label for="test_2_2">テスト2 1</label>
+                  <label for="test_2_2">W3Cによって定められた仕様であり、要素に適用できる追加の意味論のHTML属性のこと</label>
                 </div>
                 <div>
                   <input type="radio" id="test_2_3" name="q2-3" value="3">
-                  <label for="test_2_3">テスト2 1</label>
+                  <label for="test_2_3">ARIAという新しいWeb標準を作成した規約の内容</label>
                 </div>
               </td>
             </tr>
@@ -1203,15 +1213,15 @@
               <td>
                 <div>
                   <input type="radio" id="test_3_1" name="q3-3" value="1">
-                  <label for="test_3_1">テスト3 1</label>
+                  <label for="test_3_1">tab表示の際、整理を行うために利用する</label>
                 </div>
                 <div>
                   <input type="radio" id="test_3_2" name="q3-3" value="2">
-                  <label for="test_3_2">テスト3 1</label>
+                  <label for="test_3_2">要素表示のレイヤー表現のために利用する。数字が大きいほど、レイヤーの一番上に表示される</label>
                 </div>
                 <div>
                   <input type="radio" id="test_3_3" name="q3-3" value="3">
-                  <label for="test_3_3">テスト3 1</label>
+                  <label for="test_3_3">要素の入力フォーカス、キーボードの順次ナビゲーションに加わるかの設定を行うために利用する</label>
                 </div>
               </td>
             </tr>
@@ -1222,34 +1232,37 @@
               <td>
                 <div>
                   <input type="radio" id="test_4_1" name="q4-3" value="1">
-                  <label for="test_4_1">テスト4 1</label>
+                  <label for="test_4_1">スクリーンリーダーがalt属性を読み上げることができる</label>
                 </div>
                 <div>
                   <input type="radio" id="test_4_2" name="q4-3" value="2">
-                  <label for="test_4_2">テスト4 1</label>
+                  <label for="test_4_2">画像やテキストに設定することでよりユーザに対して訴求力を持たせた表示になる</label>
                 </div>
                 <div>
                   <input type="radio" id="test_4_3" name="q4-3" value="3">
-                  <label for="test_4_3">テスト4 1</label>
+                  <label for="test_4_3">要素の意味を書いておくなど、メモ代わりに利用できる要素である</label>
                 </div>
               </td>
             </tr>
             <tr class="test-table-border">
               <td>
-                テスト5
+                リンクを表したい時、どのような書き方が意味的に適切であるか、選択肢から選んでください。
               </td>
               <td>
                 <div>
                   <input type="radio" id="test_5_1" name="q5-3" value="1">
-                  <label for="test_5_1">テスト5 1</label>
+                  <label for="test_5_1">&lt;p&gt;地図を開きたいときは&lt;a
+                    href="map.html"&gt;ここ&lt;a&gt;をクリックしてください。&lt;p&gt;</label>
                 </div>
                 <div>
                   <input type="radio" id="test_5_2" name="q5-3" value="2">
-                  <label for="test_5_2">テスト5 2</label>
+                  <label for="test_5_2">&lt;p&gt;地図を開きたいときはここを&lt;a
+                    href="map.html"&gt;クリック&lt;a&gt;してください。&lt;p&gt;</label>
                 </div>
                 <div>
                   <input type="radio" id="test_5_3" name="q5-3" value="3">
-                  <label for="test_5_3">テスト5 2</label>
+                  <label for="test_5_3">&lt;p&gt;地図を開きたいときは&lt;a
+                    href="map.html"&gt;ここをクリックしてください。&lt;a&gt;&lt;p&gt;</label>
                 </div>
               </td>
             </tr>
