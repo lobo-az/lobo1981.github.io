@@ -1,4 +1,6 @@
-.is-hidden { display: none; }
+.is-hidden {
+  display: none;
+}
 
 .overlay {
   position: fixed;
@@ -6,7 +8,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
 }
 
 .modal-content {
@@ -16,4 +19,5 @@
   min-height: 300px;
   margin: 5% auto 0;
   background: #fff;
+  z-index: 1000;
 }

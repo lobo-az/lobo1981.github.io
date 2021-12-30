@@ -16,15 +16,26 @@ closeBeforeModalButton.onclick = closeBeforeModalClickHandler;
 submit.onclick = submitClickHandler;
 
 function closeBeforeModalClickHandler() {
+  if (email.value.length == 0) {
+    alert('emailが設定されていません。emailを入力してください。');
+    e.preventDefault();
+    return;
+  }
+  document.cookie = `email=${email.value}`;
   beforeModal.setAttribute("class", "is-hidden");
   counterButton.removeAttribute("disabled");
+  counterStart = true;
+  isCounterStarted = true;
+  intervalId = window.setInterval(countUp, 1000);
+  submit.removeAttribute("disabled");
+  counterButton.textContent = 'Stop';
+  document.cookie = '';
 }
 
 function counterClickHandler() {
   counterStart = !counterStart;
 
   if (counterStart) {
-    intervalId = window.setInterval(countUp, 1000);
     counterButton.textContent = 'Stop';
     submit.removeAttribute("disabled");
     isCounterStarted = true;
@@ -40,14 +51,14 @@ async function submitClickHandler(e) {
     e.preventDefault();
     return;
   }
-  if (email.value.length === 0) {
-    alert('emailアドレスを入力してください。');
-    e.preventDefault();
-    return;
-  }
+
+  let emailAddress = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('email'))
+    .split('=')[1];
 
   let sendPostData = {
-    email: email.value,
+    email: emailAddress,
     timeCount: countSec,
     sheetName: 'original'
   };

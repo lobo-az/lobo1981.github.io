@@ -60,6 +60,19 @@
 </head>
 
 <body>
+  <header class="header-menu">
+    <ui class="menu-block">
+      <li class="menu-content">リサーチレポート教材</li>
+      <li class="menu-content">時間計測後、"Stop"ボタンを押し、"送信"ボタンを押して結果を送信する処理をしてください。
+      </li>
+      <li class="menu-content">経過時間(mm:ss)</li>
+      <li class="menu-content" id="count_time">000:00</li>
+      <li class="menu-content">
+        <button id="counter" disabled>Start</button>
+        <button id="submit" disabled>送信</button>
+      </li>
+    </ui>
+  </header>
   <div id="root">
     <ul id="nav-access" class="a11y-nav">
       <li><a id="skip-main" href="#content">Skip to main content</a></li>
@@ -193,28 +206,22 @@
             <p class="summary">正確な HTML要素が、常に正しい目的で使用されているかを確認するだけで、たくさんのウェブコンテンツがアクセシブルになります。
               ここでは、最大限のアクセシビリティを確保するために、HTML をどのように使用できるかについて詳しく説明します。</p>
 
-            <div class="footer">
-              <span class="footer-description">
-                時間計測後、"Stop"ボタンを押し、"送信"ボタンを押して結果を送信する処理をしてください。
-              </span>
-              <label for="email">email
-                <input type="email" id="email" name="email" value="" />
-              </label>
-              <span>経過時間(mm:ss)</span>
-              <span class="count-time" id="count_time">000:00</span>
-              <button id="counter" disabled>Start</button>
-              <button id="submit" disabled>送信</button>
-            </div>
-
             <div id="before-modal" class="overlay">
               <div class="modal-content">
                 <h3>教材の評価実験への参加ありがとうございます。</h3>
                 <p>
                   テスト結果の送信について
-                  ブラウザの下部にメールアドレス入力欄が現れるので、学習を始める際に、先ほどのアンケートと同じメールアドレスを入力して、Startをクリックし、学習が終わったら、Stopを押してください。
-
+                  メールアドレス入力欄に事前アンケートで入力したものと同一のメールアドレスを入力してください。
                   教材の最初から、順番に最後まで、教材を読み進めてください。
+                  教材を最後まで読み進めた後、送信ボタンを押してください。
+                  ※送信ボタンを押した後、結果送信に関してサーバにデータを送信するため時間がかかる場合があります。
 
+                  送信ボタンを押した後に表示される事後アンケートのリンクより事後アンケートに移動してください。
+                </p>
+                <label>email:
+                  <input id="email" type="email" name="email" value="" />
+                </label>
+                <p>
                   元教材の内容を再現した教材となっていますが、一部リンクや検索機能に関してこの教材では機能は無効となっています。御了承ください。
                 </p>
                 <button id="close-before-modal">教材の学習を始める</button>

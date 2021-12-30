@@ -18,3 +18,23 @@
 .count-time {
   padding: 0px 10px;
 }
+
+.header-menu {
+  z-index: 999;
+  height: 64px;
+  position: fixed;
+  top: 0px;
+  background-color: black;
+  width: 100%;
+  text-align: left;
+  color: white;
+}
+
+.menu-block {
+  list-style: none;
+  display: flex;
+}
+
+.menu-content {
+  padding: 0px 10px;
+}
